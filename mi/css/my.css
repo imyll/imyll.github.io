@@ -1,0 +1,1420 @@
+/* 初始化样式开始 */
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    color: #757575;
+    text-decoration: none;
+}
+a:hover{
+    color: #ff6700;
+}
+body{
+    font-size: 12px;
+    font-family: "微软雅黑";
+    background: #f5f5f5;
+}
+.w{
+    width: 1226px;
+    margin: 0 auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+img{
+    vertical-align: bottom;
+}
+/* 初始化样式结束 */
+
+/* 顶部导航栏开始 */
+.top_nav .w{
+    width: 100%;
+    height: 40px;
+    background: #333333;
+}
+.top_nav .w .links{
+    margin-left: 339px;
+    line-height: 40px;
+}
+.top_nav .w .login{
+    margin-right: 339px;
+    line-height: 40px;
+}
+.top_nav .w .shu{
+    color: #423c37;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.top_nav .w .login .shop{
+    width: 120px;
+    height: 40px;
+    background: #424242;
+    display: inline-block;
+    text-align: center;
+}
+.top_nav .w .login .shop:hover{
+    background: #ffffff;
+}
+.top_nav .w a:hover{
+    color: #ffffff;
+}
+.top_nav .w .shop:hover{
+    color: #ff6700;
+}
+/* 顶部导航栏结束 */
+
+/* logo层开始 */
+.logo{
+    height: 100px;
+    background: #ffffff;
+}
+.logo .logo_img a{
+    width: 55px;
+    height: 55px;
+    background: url(../images/mi-logo.png) #ff6700 4px 4px;
+    display: inline-block;
+}
+.logo .logo_img{
+    margin-top: 22px;
+}
+.logo .nav ul{
+    margin-top: 42px;
+    margin-left: 188px;
+}
+.logo .nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.logo .nav ul li a{
+    font-size: 16px;
+}
+.logo .search{
+    width: 294px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    margin-top: 25px;
+}
+.logo .search input{
+    border: none;
+    outline: none;
+    width: 243px;
+    height: 48px;
+    line-height: 48px;
+    text-indent: 11px;
+    color: #757575;
+}
+.logo .search .sousuo{
+    width: 48px;
+    height: 50px;
+    float: right;
+    border-left:1px solid #e0e0e0;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+.logo .search .sousuo .iconfont{
+    font-size: 22px;
+}
+.logo .search .sousuo:hover{
+    background: #ff6700;
+    color: #ffffff;
+}
+/* logo层结束 */
+
+/* 轮播层开始 */
+.banner{
+    height: 460px;
+    color: skyblue;
+    position: relative;
+}
+.banner a img{
+    width: 100%;
+    height: 100%;
+}
+.banner .nav{
+    width: 234px;
+    height: 440px;
+    background: rgba(105,101,101,.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 20px;
+}
+.banner .nav ul li{
+    height: 42px;
+    line-height: 42px;
+}
+.banner .nav ul li a{
+    color: #ffffff;
+    font-size: 14px;
+    padding-left: 30px;
+}
+.banner .nav ul li:hover{
+    background: #ff6700;
+}
+.banner .nav ul li a .iconfont{
+    margin-right: 24px;
+}
+
+.banner .arrow_left,.banner .arrow_right{
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    cursor: pointer;
+}
+.banner .arrow_left{
+    left: 233px;
+    background:url(../images/icon-slides.png) -86px 0;
+}
+.banner .arrow_left:hover{
+    background-position: left top;
+}
+.banner .arrow_right{
+    right: 0px;
+    background:url(../images/icon-slides.png) right 0;
+}
+.banner .arrow_right:hover{
+    background-position: -42px 0;
+}
+.banner ol{
+    position: absolute;
+    right: 34px;
+    bottom: 26px;
+}
+.banner ol li{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border:2px solid #aeb0b8;
+    background: rgba(0,0,0,.4);
+    float: left;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.banner ol li:last-child{
+    margin-right: 0;
+}
+.banner ol .active{
+    background: #ffffff;
+    border:2px solid rgba(0,0,0,.4);
+}
+.banner ol li:hover{
+    background: #ffffff;
+    border:2px solid rgba(0,0,0,.4);
+}
+/* 轮播层结束 */
+
+/* 小米秒杀层开始 */
+.miaosha{
+    height: 170px;
+    background: #ffffff;
+    margin-top: 14px;
+    margin-bottom: 26px;
+}
+.miaosha .nav{
+    width: 234px;
+    height: 170px;
+}
+.miaosha .nav ul{ 
+    padding-top: 2px;
+    padding-left: 3px;
+    background: #5f5750;
+}
+.miaosha .nav ul li{
+    width: 75px;
+    height: 81px;
+    float: left;
+    border: 1px solid #665e57;
+    background: #5f5750;
+}
+.miaosha .nav ul li a{
+    color: #c9c6c4;
+    text-align: center;
+    display: block;
+    padding-top: 20px;
+}
+.miaosha .nav ul li a:hover{
+    color: #ffffff;
+}
+.miaosha .nav ul li a span{
+    display: block;
+    font-size: 22px;
+}
+.miaosha .one,.two,.three{
+    width: 316px;
+    height: 170px;
+}
+.miaosha img{
+    width: 100%;
+    height: 100%;
+}
+.miaosha .one a img{
+    margin-left: 14px;
+}
+.miaosha .two a img{
+    margin-left: 29px;
+}
+
+/* 小米秒杀层结束 */
+
+/* 侧边栏样式开始 */
+.sidebar{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 82px;
+    height: 560px;
+    margin-top: -280px;
+    z-index:1000;
+}
+.sidebar a{
+    display: block;
+    width: 82px;
+    height: 70px;
+    border-top: 1px solid #f5f5f5;
+    border-left: 1px solid #f5f5f5;
+    background: white;
+    text-align: center;
+    cursor: default;
+    position: relative;
+    padding-top: 20px;
+}
+.sidebar a .iconfont{
+    display: block;
+    font-size:32px;
+}
+.sidebar a:nth-last-child(2){
+    border-bottom: 1px solid #f5f5f5;
+}
+.sidebar .backUp{
+    border-bottom: 1px solid #f5f5f5;
+    margin-top: 16px;
+    cursor: pointer;
+}
+.sidebar a .qrcode{
+    position: absolute;
+    left: -142px;
+    top: 0;
+    width: 128px;
+    height: 190px;
+    background: white;
+    font-size:14px;
+    color:#757575;
+    display: none;
+    border:1px solid #f5f5f5;
+}
+.sidebar a:hover .qrcode{
+    display: block;
+}
+.sidebar a .qrcode img{
+    width: 96px;
+    height: 96px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+.sidebar a .qrcode::before{
+    content:"";
+    position: absolute;
+    right: -20px;
+    top: 43px;
+    width: 0;
+    height: 0;
+    border:10px solid transparent;
+    border-left:10px solid white;
+    z-index:1;
+}
+.sidebar a .qrcode::after{
+    content:"";
+    position: absolute;
+    right: -22px;
+    top: 42px;
+    width: 0;
+    height: 0;
+    border:11px solid transparent;
+    border-left:11px solid #f5f5f5;
+}
+/* 侧边栏样式结束 */
+
+/* 小米闪购层开始 */
+.iflashbuy{
+    height: 402px;
+    margin-bottom: 22px;
+}
+.iflashbuy .title{
+    height: 62px;
+    line-height: 62px;
+}
+.iflashbuy .title h2{
+    font-size: 22px;
+    color: #33336b;
+    font-weight: 200;
+}
+.iflashbuy .title .arrow .iconfont{
+    width: 34px;
+    height: 22px;
+    line-height: 22px;
+    border:1px solid #e0e0e0;
+    float: left;
+    text-align: center;
+    margin-top: 28px;
+    color:#e0e0e0;
+}
+.iflashbuy .title .arrow .iconfont:nth-child(2){
+    color:#b0b0b0;
+    cursor: pointer;
+}
+.iflashbuy .title .arrow .iconfont:nth-child(2):hover{
+    color:#ff6700;
+}
+.iflashbuy .content ul li{
+    width: 234px;
+    height: 339px;
+    border-top: 1px solid #e53935;
+    float: left;
+    margin-left: 14px;
+    text-align: center;
+    background: #ffffff;
+}
+.iflashbuy .content ul li:nth-child(2){
+    border-top: 1px solid #83c44e;
+}
+.iflashbuy .content ul li:nth-child(3){
+    border-top: 1px solid #2196f3;
+}
+.iflashbuy .content ul li:nth-child(5){
+    border-top: 1px solid #00c0a5;
+}
+.iflashbuy .content .one{
+    margin-left: 0;
+    text-align: center;
+    background: #f1eded;
+}
+.iflashbuy .content .one .round{
+    color: #ef3a3b;
+    margin-top: 61px;
+    margin-bottom: 33px;
+    font-size: 22px;
+}
+.iflashbuy .content .one .end{
+    color: #6f6d6d;
+    margin-top: 36px;
+    margin-bottom: 33px;
+}
+.iflashbuy .content .one .time{
+    color: #ffffff;
+    font-size: 22px;
+}
+.iflashbuy .content .one .time span{
+    width: 46px;
+    height: 36px;
+    background: #605751;
+    display: inline-block;
+    padding-top: 10px;
+}
+.iflashbuy .content .one .time i{
+    color: #000000;
+    font-style: normal;
+    margin-left: 6px;
+}
+.iflashbuy .content ul li .img{
+    width: 160px;
+    height: 160px;
+    margin-top: 30px;
+}
+.iflashbuy .content ul li .title{
+    color: #202020;
+    font-size: 12px;
+}
+.iflashbuy .content ul li .desc{
+    color: #adadad;
+}
+.iflashbuy .content ul li .price{
+    color: #fa6509;
+}
+.iflashbuy .content ul li .price del{
+    color: #adadad;
+}
+/* 小米闪购层结束 */
+
+/* 广告层开始 */
+.advertising a img{
+    width: 100%;
+    margin-bottom: 22px;
+}
+/* 广告层结束 */
+
+/* 商品列表层1开始 */
+.product_list1{
+    height: 694px;
+}
+.product_list1 .title{
+    height: 58px;
+    line-height: 58px;
+}
+.product_list1 .title h2{
+    font-size: 22px;
+    color: #33336b;
+    font-weight: 200;
+}
+.product_list1 .title a{
+    font-size: 16px;
+}
+.product_list1 .title a span{
+    margin-left: 5px
+}
+.product_list1 .content{
+    height: 614px;
+}
+.product_list1 .content .left{
+    width: 234px;
+    height: 614px;
+}
+.product_list1 .content img{
+    width: 100%;
+    height: 100%;
+}
+.product_list1 .content .right{
+    width: 992px;
+    height: 100%;
+}
+.product_list1 .content .right ul li{
+    width: 234px;
+    height: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    float: left;
+}
+.product_list1 .content .right ul li:nth-child(n+5){
+    margin-bottom: 0;
+}
+.product_list1 .content .right ul li a img{
+    width: 160px;
+    height: 160px;
+    margin-top: 18px;
+}
+.product_list1 .content .right ul li a{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    background: #ffffff;
+    display: block;
+}
+.product_list1 .content .right ul li a .pro_name{
+    color: #333333;
+    font-size: 14px;
+}
+.product_list1 .content .right ul li a .desc{
+    color: #b0b0b0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.product_list1 .content .right ul li a .price{
+    color: #ff6700;
+}
+.product_list1 .content .right ul li a .price del{
+    color: #b0b0b0;
+}
+.product_list1 .content a{
+    transition: box-shadow 0.5s, transform 0.5s ;
+}
+.product_list1 .content a:hover{
+    box-shadow: 0px 15px 30px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}
+/* 商品列表层1结束 */
+
+/* 商品列表层2开始 */
+.product_list2{
+    height: 694px;
+}
+.product_list2 .title{
+    height: 58px;
+    line-height: 58px;
+}
+.product_list2 .title h2{
+    font-size: 22px;
+    color: #33336b;
+    font-weight: 200;
+}
+.product_list2 .title a{
+    font-size: 16px;
+}
+.product_list2 .title a .rm{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+.product_list2 .title a .TV_video{
+    margin-left: 30px
+}
+.product_list2 .title a .TV_video:hover{
+    border-bottom: 2px solid #ff6700;
+}
+.product_list2 .content{
+    height: 614px;
+}
+.product_list2 .content .left{
+    width: 234px;
+    height: 614px;
+}
+.product_list2 .content img{
+    width: 100%;
+    height: 100%;
+}
+.product_list2 .content .left ul li{
+    width: 234px;
+    height: 300px;
+}
+.product_list2 .content .left ul li:nth-child(2){
+    margin-top: 14px;
+}
+.product_list2 .content .right{
+    width: 992px;
+    height: 100%;
+}
+.product_list2 .content .right ul li{
+    width: 234px;
+    height: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    float: left;
+}
+.product_list2 .content .right ul li:nth-child(n+5){
+    margin-bottom: 0;
+}
+.product_list2 .content .right ul li a img{
+    width: 160px;
+    height: 160px;
+    margin-top: 18px;
+}
+.product_list2 .content .right ul li a{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    background: #ffffff;
+    display: block;
+}
+.product_list2 .content .right ul li a .pro_name{
+    color: #333333;
+    font-size: 14px;
+}
+.product_list2 .content .right ul li a .desc{
+    color: #b0b0b0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.product_list2 .content .right ul li a .price{
+    color: #ff6700;
+}
+.product_list2 .content .right ul li a .price del{
+    color: #b0b0b0;
+}
+.product_list2 .content .right ul .last a{
+    width: 100%;
+    height: 143px;
+}
+.product_list2 .content .right ul .last a img{
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.product_list2 .content .right ul .last a{
+    text-align: left;
+    overflow: hidden;
+}
+.product_list2 .content .right ul .last a div{
+    margin-left: 30px;
+}
+.product_list2 .content .right ul .last a .pro_name{
+    margin-top: 45px;
+    margin-bottom: 16px;
+}
+.product_list2 .content .right ul .last .more{
+    margin-top: 14px;
+}
+.product_list2 .content .right ul .last a .gd{
+    color: #333333;
+    font-size: 20px;
+    margin-top: 45px;
+}
+.product_list2 .content .right ul .last a .rm{
+    color: #757575;
+}
+.product_list2 .content .right ul .last a span{
+    font-size: 50px;
+    color: #ff6700;
+    margin-right: 35px;
+    margin-top: -44px;
+}
+.product_list2 .content a{
+    transition: box-shadow 0.5s, transform 0.5s ;
+}
+.product_list2 .content a:hover{
+    box-shadow: 0px 15px 30px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}
+/* 商品列表层2结束 */
+
+/* 商品列表层3开始 */
+.product_list3{
+    height: 694px;
+}
+.product_list3 .title{
+    height: 58px;
+    line-height: 58px;
+}
+.product_list3 .title h2{
+    font-size: 22px;
+    color: #33336b;
+    font-weight: 200;
+}
+.product_list3 .title a{
+    font-size: 16px;
+}
+.product_list3 .title a .rm{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+.product_list3 .title a .cx,.af{
+    margin-left: 30px
+}
+.product_list3 .title a .cx:hover,.af:hover{
+    border-bottom: 2px solid #ff6700;
+}
+.product_list3 .content{
+    height: 614px;
+}
+.product_list3 .content .left{
+    width: 234px;
+    height: 614px;
+}
+.product_list3 .content img{
+    width: 100%;
+    height: 100%;
+}
+.product_list3 .content .left ul li{
+    width: 234px;
+    height: 300px;
+}
+.product_list3 .content .left ul li:nth-child(2){
+    margin-top: 14px;
+}
+.product_list3 .content .right{
+    width: 992px;
+    height: 100%;
+}
+.product_list3 .content .right ul li{
+    width: 234px;
+    height: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    float: left;
+}
+.product_list3 .content .right ul li:nth-child(n+5){
+    margin-bottom: 0;
+}
+.product_list3 .content .right ul li a img{
+    width: 160px;
+    height: 160px;
+    margin-top: 18px;
+}
+.product_list3 .content .right ul li a{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    background: #ffffff;
+    display: block;
+}
+.product_list3 .content .right ul li a .pro_name{
+    color: #333333;
+    font-size: 14px;
+}
+.product_list3 .content .right ul li a .desc{
+    color: #b0b0b0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.product_list3 .content .right ul li a .price{
+    color: #ff6700;
+}
+.product_list3 .content .right ul li a .price del{
+    color: #b0b0b0;
+}
+.product_list3 .content .right ul .last a{
+    width: 100%;
+    height: 143px;
+}
+.product_list3 .content .right ul .last a img{
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.product_list3 .content .right ul .last a{
+    text-align: left;
+    overflow: hidden;
+}
+.product_list3 .content .right ul .last a div{
+    margin-left: 30px;
+}
+.product_list3 .content .right ul .last a .pro_name{
+    margin-top: 45px;
+    margin-bottom: 16px;
+}
+.product_list3 .content .right ul .last .more{
+    margin-top: 14px;
+}
+.product_list3 .content .right ul .last a .gd{
+    color: #333333;
+    font-size: 20px;
+    margin-top: 45px;
+}
+.product_list3 .content .right ul .last a .rm{
+    color: #757575;
+}
+.product_list3 .content .right ul .last a span{
+    font-size: 50px;
+    color: #ff6700;
+    margin-right: 35px;
+    margin-top: -44px;
+}
+.product_list3 .content a{
+    transition: box-shadow 0.5s, transform 0.5s ;
+}
+.product_list3 .content a:hover{
+    box-shadow: 0px 15px 30px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}
+/* 商品列表层3结束 */
+
+/* 商品列表层4开始 */
+.product_list4{
+    height: 694px;
+}
+.product_list4 .title{
+    height: 58px;
+    line-height: 58px;
+}
+.product_list4 .title h2{
+    font-size: 22px;
+    color: #33336b;
+    font-weight: 200;
+}
+.product_list4 .title a{
+    font-size: 16px;
+}
+.product_list4 .title a .rm{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+.product_list4 .title a .ejyx{
+    margin-left: 30px
+}
+.product_list4 .title a .ejyx:hover{
+    border-bottom: 2px solid #ff6700;
+}
+.product_list4 .content{
+    height: 614px;
+}
+.product_list4 .content .left{
+    width: 234px;
+    height: 614px;
+}
+.product_list4 .content img{
+    width: 100%;
+    height: 100%;
+}
+.product_list4 .content .left ul li{
+    width: 234px;
+    height: 300px;
+}
+.product_list4 .content .left ul li:nth-child(2){
+    margin-top: 14px;
+}
+.product_list4 .content .right{
+    width: 992px;
+    height: 100%;
+}
+.product_list4 .content .right ul li{
+    width: 234px;
+    height: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    float: left;
+}
+.product_list4 .content .right ul li:nth-child(n+5){
+    margin-bottom: 0;
+}
+.product_list4 .content .right ul li a img{
+    width: 160px;
+    height: 160px;
+    margin-top: 18px;
+}
+.product_list4 .content .right ul li a{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    background: #ffffff;
+    display: block;
+}
+.product_list4 .content .right ul li a .pro_name{
+    color: #333333;
+    font-size: 14px;
+}
+.product_list4 .content .right ul li a .desc{
+    color: #b0b0b0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.product_list4 .content .right ul li a .price{
+    color: #ff6700;
+}
+.product_list4 .content .right ul li a .price del{
+    color: #b0b0b0;
+}
+.product_list4 .content .right ul .last a{
+    width: 100%;
+    height: 143px;
+}
+.product_list4 .content .right ul .last a img{
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.product_list4 .content .right ul .last a{
+    text-align: left;
+    overflow: hidden;
+}
+.product_list4 .content .right ul .last a div{
+    margin-left: 30px;
+}
+.product_list4 .content .right ul .last a .pro_name{
+    margin-top: 45px;
+    margin-bottom: 16px;
+}
+.product_list4 .content .right ul .last .more{
+    margin-top: 14px;
+}
+.product_list4 .content .right ul .last a .gd{
+    color: #333333;
+    font-size: 20px;
+    margin-top: 45px;
+}
+.product_list4 .content .right ul .last a .rm{
+    color: #757575;
+}
+.product_list4 .content .right ul .last a span{
+    font-size: 50px;
+    color: #ff6700;
+    margin-right: 35px;
+    margin-top: -44px;
+}
+.product_list4 .content a{
+    transition: box-shadow 0.5s, transform 0.5s ;
+}
+.product_list4 .content a:hover{
+    box-shadow: 0px 15px 30px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}
+/* 商品列表层4结束 */
+
+/* 商品列表层5开始 */
+.product_list5{
+    height: 694px;
+}
+.product_list5 .title{
+    height: 58px;
+    line-height: 58px;
+}
+.product_list5 .title h2{
+    font-size: 22px;
+    color: #33336b;
+    font-weight: 200;
+}
+.product_list5 .title a{
+    font-size: 16px;
+}
+.product_list5 .title a .rm{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+.product_list5 .title a .one,.two{
+    margin-left: 30px
+}
+.product_list5 .title a .one:hover,.two:hover{
+    border-bottom: 2px solid #ff6700;
+}
+.product_list5 .content{
+    height: 614px;
+}
+.product_list5 .content .left{
+    width: 234px;
+    height: 614px;
+}
+.product_list5 .content img{
+    width: 100%;
+    height: 100%;
+}
+.product_list5 .content .left ul li{
+    width: 234px;
+    height: 300px;
+}
+.product_list5 .content .left ul li:nth-child(2){
+    margin-top: 14px;
+}
+.product_list5 .content .right{
+    width: 992px;
+    height: 100%;
+}
+.product_list5 .content .right ul li{
+    width: 234px;
+    height: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    float: left;
+}
+.product_list5 .content .right ul li:nth-child(n+5){
+    margin-bottom: 0;
+}
+.product_list5 .content .right ul li a img{
+    width: 160px;
+    height: 160px;
+    margin-top: 18px;
+}
+.product_list5 .content .right ul li a{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    background: #ffffff;
+    display: block;
+}
+.product_list5 .content .right ul li a .pro_name{
+    color: #333333;
+    font-size: 14px;
+}
+.product_list5 .content .right ul li a .desc{
+    color: #b0b0b0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.product_list5 .content .right ul li a .price{
+    color: #ff6700;
+}
+.product_list5 .content .right ul li a .price del{
+    color: #b0b0b0;
+}
+.product_list5 .content .right ul .last a{
+    width: 100%;
+    height: 143px;
+}
+.product_list5 .content .right ul .last a img{
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.product_list5 .content .right ul .last a{
+    text-align: left;
+    overflow: hidden;
+}
+.product_list5 .content .right ul .last a div{
+    margin-left: 30px;
+}
+.product_list5 .content .right ul .last a .pro_name{
+    margin-top: 45px;
+    margin-bottom: 16px;
+}
+.product_list5 .content .right ul .last .more{
+    margin-top: 14px;
+}
+.product_list5 .content .right ul .last a .gd{
+    color: #333333;
+    font-size: 20px;
+    margin-top: 45px;
+}
+.product_list5 .content .right ul .last a .rm{
+    color: #757575;
+}
+.product_list5 .content .right ul .last a span{
+    font-size: 50px;
+    color: #ff6700;
+    margin-right: 35px;
+    margin-top: -44px;
+}
+.product_list5 .content a{
+    transition: box-shadow 0.5s, transform 0.5s ;
+}
+.product_list5 .content a:hover{
+    box-shadow: 0px 15px 30px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}
+/* 商品列表层5结束 */
+
+/* 商品列表层6开始 */
+.product_list6{
+    height: 694px;
+}
+.product_list6 .title{
+    height: 58px;
+    line-height: 58px;
+}
+.product_list6 .title h2{
+    font-size: 22px;
+    color: #33336b;
+    font-weight: 200;
+}
+.product_list6 .title a{
+    font-size: 16px;
+}
+.product_list6 .title a .rm{
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+.product_list6 .title a .one{
+    margin-left: 30px
+}
+.product_list6 .title a .one:hover{
+    border-bottom: 2px solid #ff6700;
+}
+.product_list6 .content{
+    height: 614px;
+}
+.product_list6 .content .left{
+    width: 234px;
+    height: 614px;
+}
+.product_list6 .content img{
+    width: 100%;
+    height: 100%;
+}
+.product_list6 .content .left ul li{
+    width: 234px;
+    height: 300px;
+}
+.product_list6 .content .left ul li:nth-child(2){
+    margin-top: 14px;
+}
+.product_list6 .content .right{
+    width: 992px;
+    height: 100%;
+}
+.product_list6 .content .right ul li{
+    width: 234px;
+    height: 300px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    float: left;
+}
+.product_list6 .content .right ul li:nth-child(n+5){
+    margin-bottom: 0;
+}
+.product_list6 .content .right ul li a img{
+    width: 160px;
+    height: 160px;
+    margin-top: 18px;
+}
+.product_list6 .content .right ul li a{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    background: #ffffff;
+    display: block;
+}
+.product_list6 .content .right ul li a .pro_name{
+    color: #333333;
+    font-size: 14px;
+}
+.product_list6 .content .right ul li a .desc{
+    color: #b0b0b0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.product_list6 .content .right ul li a .price{
+    color: #ff6700;
+}
+.product_list6 .content .right ul li a .price del{
+    color: #b0b0b0;
+}
+.product_list6 .content .right ul .last a{
+    width: 100%;
+    height: 143px;
+}
+.product_list6 .content .right ul .last a img{
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.product_list6 .content .right ul .last a{
+    text-align: left;
+    overflow: hidden;
+}
+.product_list6 .content .right ul .last a div{
+    margin-left: 30px;
+}
+.product_list6 .content .right ul .last a .pro_name{
+    margin-top: 45px;
+    margin-bottom: 16px;
+}
+.product_list6 .content .right ul .last .more{
+    margin-top: 14px;
+}
+.product_list6 .content .right ul .last a .gd{
+    color: #333333;
+    font-size: 20px;
+    margin-top: 45px;
+}
+.product_list6 .content .right ul .last a .rm{
+    color: #757575;
+}
+.product_list6 .content .right ul .last a span{
+    font-size: 50px;
+    color: #ff6700;
+    margin-right: 35px;
+    margin-top: -44px;
+}
+.product_list6 .content a{
+    transition: box-shadow 0.5s, transform 0.5s ;
+}
+.product_list6 .content a:hover{
+    box-shadow: 0px 15px 30px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}
+/* 商品列表层6结束 */
+
+/* 视频层样式开始 */
+.video_box {
+    height: 325px;
+    margin-bottom: 26px;
+}
+.video_box .title{
+    height: 40px;
+}
+.video_box .title h2{
+    font-size:22px;
+    color:#33336b;
+    font-weight: 200;
+}
+.video_box .title a{
+    font-size:16px;
+    color:#424242;
+}
+.video_box .title a:hover{
+    color:#ff6700;
+}
+.video_box .title a .iconfont{
+    font-size:22px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.video_box .content{
+    height: 285px;
+}
+.video_box .content ul li{
+    width: 296px;
+    height: 100%;
+    float: left;
+    margin-right: 14px;
+}
+.video_box .content ul li:last-child{
+    margin-right: 0;
+}
+.video_box .content ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.video_box .content ul li a .video_img{
+    height: 180px;
+    width: 100%;
+    position: relative;
+}
+.video_box .content ul li a .video_img .video_icon{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    width: 32px;
+    height: 20px;
+    border:2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 20px;
+    color:white;
+}
+.video_box .content ul li a .video_img:hover .video_icon{
+    background: #ff6700;
+    border-color:#ff6700;
+}
+.video_box .content ul li a .video_img img{
+    width: 100%;
+    height: 100%;
+}
+.video_box .content ul li a .introduce{
+    text-align: center;
+    height: 105px;
+    background: white;
+    line-height: 105px;
+    color:#333333;
+    font-size:14px;
+}
+.video_box .content ul li a .video_img .video_icon{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    width: 32px;
+    height: 20px;
+    border:2px solid white;
+    border-radius: 10px;
+}
+/* 视频层样式结束 */
+
+/* 底部样式层开始 */
+.footer{
+    height: 525px;
+    background: #ffffff;
+}
+.footer .footer_title{
+    width: 100%;
+    height: 79px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.footer .footer_title a{
+    width: 243px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    border-left: 1px solid #e0e0e0;
+    text-align: center;
+    margin-top: 27px;
+    color: #616161;
+    float: left;
+}
+.footer .footer_title a:hover{
+    color:#ff6700;
+}
+.footer .footer_title a:first-child{
+    border-left:none;
+}
+.footer .footer_title a .iconfont{
+    font-size:24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.footer .footer_content{
+    height: 191px;
+    padding-top: 40px;
+}
+.footer .footer_content .left dl{
+    width: 160px;
+    float: left;
+}
+.footer .footer_content .left dl dt{
+    font-size:14px;
+    margin-bottom: 24px;
+}
+.footer .footer_content .left dl dd{
+    line-height: 28px;
+}
+.footer .footer_content .right{
+    width: 251px;
+    height: 111px;
+    text-align: center;
+    /* 行高设置成1倍就可以去掉默认的行间距 */
+    line-height: 1;
+    border-left:1px solid #e0e0e0;
+}
+.footer .footer_content .right .tel{
+    font-size:18px;
+    color:#ff6700;
+    margin-bottom: 13px;
+}
+.footer .footer_content .right .time{
+    color:#7a617a;
+}
+.footer .footer_content .right .kefu{
+    width: 118px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color:#ff6700;
+    border:1px solid #ff6700;
+    margin:0 auto;
+    cursor: pointer;
+    transition: color 0.2s,background 0.2s, border-color 0.2s;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.footer .footer_content.right .kefu:hover{
+    color:white;
+    background: #ff6700;
+    border-color:#ff6700;
+}
+.footer .footer_content .right .kefu .iconfont{
+    font-size:12px;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+.footer .footer_content .right .guanzhu a{
+    width: 22px;
+    height:22px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.footer .footer_content .right .guanzhu .wb{
+    background:url(../images/wb.png) no-repeat;
+    background-size:100% 100%;
+}
+.footer .footer_content .right .guanzhu .wb:hover{
+    background-image:url(../images/wb2.png);
+}
+.footer .footer_content .right .guanzhu .wx{
+    background:url(../images/wx.png) no-repeat;
+    background-size:100% 100%;
+}
+.footer .footer_content .right .guanzhu .wx:hover{
+    background-image:url(../images/wx2.png);
+}
+.footer .copyright .links {
+    overflow: hidden;
+    margin-bottom: 27px;
+}
+.footer .copyright .links a{
+    float: left;
+    font-size:14px;
+}
+.footer .copyright .links .line{
+    float: left;
+    margin-left: 7px;
+    margin-right: 7px;
+    color:#424242;
+}
+.footer .copyright p{
+    line-height: 20px;
+    font-size:14px;
+}
+.footer .copyright p:last-child{
+    margin-top: 20px;
+}
+/* 底部样式层结束 */

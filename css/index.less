@@ -1,0 +1,81 @@
+// 初始化样式开始
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: lightseagreen;
+}
+.w{
+    width: 1260px;
+    margin: 0 auto;   
+}
+// 左浮动
+.fl{
+    float: left;
+}
+// 右浮动
+.fr{
+    float: right;
+}
+// 初始化样式结束
+
+// 导航栏开始
+.top_nav{
+    background: #333;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 30px;
+    ul li{
+        margin-right: 10px;
+        color: #ddd;
+        cursor: pointer;
+    }
+    ul .title{
+        font-size: 30px;
+        color: #fff;
+    }
+}
+// 导航栏结束
+
+// 个人资料层开始
+.content{
+    h1{
+        margin-bottom: 20px;
+    }
+    ul li::before{
+        display: inline-block;
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #606c71;
+        margin-right: 5px;
+    }
+    ul li span{
+        color: #606c71;
+        font-size: 20px;
+
+    }
+    a{
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    a::before{
+        display: inline-block;
+        content: "";
+        width: 6px;
+        height: 6px;
+        border: 1px solid lightseagreen;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+}
+// 个人资料层结束
