@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>Message: {{msg}}</p>
+        <p v-text="msg">xxx</p>
+        <!-- 一次性插值 -->
+        <p v-once>Once:{{msg}}</p>
+        <p v-html="htmlRaw"></p>
+        <p v-html="sHtmlRaw"></p>
+        
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: "hello world",
+                htmlRaw: '<span style="color: red;">这是html</span>',
+                sHtmlRaw: '<span style="color: red;" onclick="console.log(123)">点击</span>',
+                dynamicID: "hello",
+                link: "http://www.baidu.com",
+                bool: true,
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+</html>

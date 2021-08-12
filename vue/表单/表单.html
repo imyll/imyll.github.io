@@ -9,18 +9,24 @@
 </head>
 <body>
     <div id="app">
-        <p>{{a}}</p>
+        <input type="text" v-model="value">
+        <span>{{value}}</span>
+        <hr/>
+        <textarea v-model="value"></textarea>
+        <hr>
+        <label>
+            <input type="checkbox" v-model="isAdult">
+            <span>是否成年</span>
+        </label>
     </div>
     <script>
         var app = new Vue({
             el: "#app",
             data: {
-                a: 10,
-            },
-            created: function(){
-                
+                value: "",
+                isAdult: "",
             }
-        });
+        })
     </script>
 </body>
 </html>

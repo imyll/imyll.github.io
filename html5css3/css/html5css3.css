@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+body {
+  background: #37474f;
+}
+.w {
+  width: 1000px;
+  margin: 0 auto;
+}
+.btns {
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: center;
+}
+.btns .btns-title {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.btns button {
+  width: 100px;
+  height: 50px;
+}
+.loads {
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+}
+.loads ul {
+  display: flex;
+}
+.loads ul li {
+  width: 250px;
+  height: 250px;
+}
+.loads ul li .load1 {
+  width: 200px;
+  height: 200px;
+  margin-left: 25px;
+  margin-top: 25px;
+  position: relative;
+}
+.loads ul li .load1 span {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.loads ul li .load1 .load1-core {
+  animation: load1Core 3s ease 0s infinite alternate;
+  background: lightgreen;
+  border-radius: 50%;
+  transform-origin: center;
+}
+.loads ul li .load1 .load1-text {
+  transform-origin: center;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+  animation: load1Text 3s ease 0s infinite alternate;
+}
+@keyframes load1Core {
+  to {
+    width: 150px;
+    height: 150px;
+    background: #ff6700;
+    transform: rotate(360deg);
+    border-radius: 0;
+  }
+}
+@keyframes load1Text {
+  to {
+    width: 150px;
+    height: 150px;
+    font-size: 24px;
+    line-height: 150px;
+  }
+}
+.loads ul li .load2 {
+  width: 100px;
+  height: 100px;
+  margin-left: 50px;
+  margin-top: 50px;
+  background: cyan;
+  animation: load2 3s ease infinite alternate;
+  transform-origin: 50% 50%;
+}
+@keyframes load2 {
+  from {
+    transform: scale3D(1);
+    transform-origin: 50% 50%;
+  }
+  to {
+    width: 200px;
+    height: 200px;
+  }
+}
