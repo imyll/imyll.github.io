@@ -25,11 +25,16 @@
       @playing="playing = true"
       @pause="playing = false"
     ></audio>
+    <PlayBar></PlayBar>
   </div>
 </template>
 
 <script>
+  import PlayBar from "@/components/PlayBar.vue";
 export default {
+  ccomponents: {
+    PlayBar,
+  },
   data: function() {
     return {
       currentSong: null,
