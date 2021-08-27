@@ -30,7 +30,7 @@
 </template>
 
 <script>
-  import PlayBar from "@/components/PlayBar.vue";
+import PlayBar from "@/components/PlayBar.vue";
 export default {
   ccomponents: {
     PlayBar,
