@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习vuex的第二天</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="increment">+1</button>
+    <button @click="incrementN(2)">+2</button>
+    <button @click="incrementN(5)">+5</button>
+    <button @click="incrementN(10)">+10</button>
+    <button @click="decrement">-1</button>
+    <p>count的值为: {{ $store.state.count }}</p>
+  </div>
+  <script>
+    const store = new Vuex.Store({
+      state: {
+        count: 10,
+        todos: [{
+            id: 1,
+            text: "html",
+            completed: true,
+          },
+          {
+            id: 2,
+            text: "css",
+            completed: false,
+          },
+          {
+            id: 3,
+            text: "JavaScript",
+            completed: true,
+          },
+          {
+            id: 4,
+            text: "Vue",
+            completed: false,
+          }
+        ]
+      },
+      getters: {
+        // count的值乘3
+        count3: (state) => state.count * 3,
+        // 获取成功状态的todos数据
+        doneTodos: (state) => state.todos.filter((item) => item.completed),
+        // 成功状态数据的长度
+        doneTodosCount: (state, getters) => (getters.doneTodos.length),
+        // 通过ID值 获取todo
+        getTodoById: (state) => (id) => state.todos.find((n) => n.id === id),
+      },
+      mutations: {
+
+        // count + 1
+        increment: function (state) {
+          state.count++;
+        },
+        // count - 1
+        decrement: function (state) {
+          state.count--;
+        },
+        // count + n
+        incrementN: function (state, n) {
+          state.count += n;
+        },
+      },
+
+      action: {
+        incrementAction({
+          commit
+        }, n) {
+          return new Promise((resolve, reject) => {
+            commit("toggleLoading", true);
+
+            setTimeout(() => {
+              commit("incrementN", n);
+              commit("toggleLoading", false);
+              resolve();
+            }, 5000);
+          })
+        }
+      },
+
+
+
+    });
+    // 输出store里面的count的值
+    console.log("state里面count的值:", store.state.count);
+    // 输出getter里面计算后的 count乘3 的值
+    console.log("getters里面count3的值:", store.getters.count3);
+    // 成功状态的todo的数据长度
+    console.log("成功状态的todo的数据长度:", store.getters.doneTodosCount);
+    // 输出通过id选择的todo里的数据内容
+    console.log("通过id选择到todo的内容:", store.getters.getTodoById(3).text);
+
+    const {
+      mapState,
+      mapGetters,
+      mapMutations,
+      mapActions
+    } = Vuex;
+
+    const app = new Vue({
+      el: "#app",
+      store,
+      computed: {
+        ...mapState(["count", "todos"]),
+        ...mapGetters(["doneTodos"]),
+      },
+      methods: {
+        // increment: function(){
+        //   this.$store.commit("increment");
+        // },
+        // decrement: function(){
+        //   this.$store.commit("decrement");
+        // },
+        ...mapMutations(["increment", "decrement", "incrementN"]),
+        vueasync: function () {
+          setTimeout(() => {
+            this.$store.commit("incrementN", 9);
+          }, 3000);
+        },
+        ...mapActions(["incrementAction"]),
+      },
+    });
+  </script>
+</body>
+
+</html>

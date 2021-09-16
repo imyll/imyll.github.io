@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习Vuex的第一天</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>count is {{ $store.state.count }}</p>
+    <button @click="clickHandler">++</button>
+    <hr />
+    <counter></counter>
+    
+  </div>
+  <script>
+    const { mapState } = Vuex;
+
+    const store = new Vuex.Store({
+      state: {
+        count: 10,
+        mode: "dark",
+        msg: "你好",
+      },
+      mutations: {
+        increment(state) {
+          state.count++;
+        },
+        decrement(state) {
+          state.count--;
+        }
+      },
+    });
+
+    Vue.component("counter", {
+      template: `
+      <div>
+        <p>自组件里面的count {{ count }}</p>
+        <button @click="click">子组件</button>
+        <p>{{ mode }}</p>
+        <p>{{ msg }}</p>
+      </div>
+      `,
+      methods: {
+        click() {
+          this.$store.commit("decrement")
+        },
+      },
+      // computed: {
+      //   count(){
+      //     return store.state.count
+      //   },
+      // },
+      computed: mapState({
+        count: state => state.count,
+        mode: state => state.mode,
+        msg: state => state.msg,
+        // countAlias: "count",
+      })
+    });
+
+    const app = new Vue({
+      el: "#app",
+      store,
+      methods: {
+        clickHandler: function () {
+          this.$store.commit("increment");
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
