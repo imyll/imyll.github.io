@@ -1,0 +1,6 @@
+<!--components/nav-bar/nav-bar.wxml-->
+<div class="nav-bar">
+    <van-nav-bar left-arrow left-text="返回" bind:click-left="onClickLeft">
+        <view class="title" slot="title"><slot></slot></view>
+    </van-nav-bar>
+</div>

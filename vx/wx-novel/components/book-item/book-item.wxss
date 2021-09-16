@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  padding: 20rpx 30rpx;
+}
+.card .right {
+  width: 600rpx;
+  margin-left: 30rpx;
+}
+.card .right .title {
+  font-weight: 600;
+}
+.card .right .desc {
+  height: 120rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 40rpx;
+  overflow: hidden;
+}
+.card .right .info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #999;
+}
+.card .right .info .tag {
+  color: #ffa54f;
+  font-size: 18rpx;
+  border: 1px solid #ffa54f;
+  border-radius: 3px;
+}

@@ -1,0 +1,6 @@
+<!--pages/bookshelf/bookshelf.wxml-->
+<top-nav>我的书架</top-nav>
+<view>
+    <text>我的书架</text>
+    <text>阅读记录</text>
+</view>

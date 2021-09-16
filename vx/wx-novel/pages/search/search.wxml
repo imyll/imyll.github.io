@@ -1,0 +1,17 @@
+<!--pages/search/search.wxml-->
+<nav-bar>搜索</nav-bar>
+
+<!-- 搜索框 -->
+<view class="search">
+    <van-search class="input" value="{{ value }}" placeholder="请输入搜索关键词" />
+    <text>确定</text>
+</view>
+
+<!-- 热门推荐 -->
+<view class="searching-hotwords">
+    <view class="searching-title">
+        <text class="search-title">热门推荐</text>
+        <text class="right" bindtap="randomSearch">换一换</text>
+    </view>
+    <text class="content" wx:for="{{searchword}}" wx:key="index">{{item}}</text>
+</view>
