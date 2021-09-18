@@ -53,7 +53,7 @@
       <span>></span>
     </div>
     <!-- 书籍目录 -->
-    <div class="inner">
+    <div class="inner" @click="navToChapter">
       <i>></i>
       <span>{{ detail.lastChapter }}</span>
     </div>
@@ -64,8 +64,8 @@
       </div>
       <ul class="c-comment-list">
         <li>
-          <div class="inner">
-            <img src="" alt="">
+          <div class="c-inner">
+            <img src="" alt="" />
             <div class="right">
               <p></p>
               <p></p>
@@ -112,6 +112,9 @@ export default {
 
   methods: {
     ...mapMutations(["addMybooks", "removeMybooks"]),
+    navToChapter() {
+      this.$router.push({ path: "./chapter" });
+    },
   },
 };
 </script>

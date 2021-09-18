@@ -83,7 +83,7 @@ li {
         color: #ff8400;
         font-size: 12px;
         border-radius: 2px;
-        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
       }
     }
   }

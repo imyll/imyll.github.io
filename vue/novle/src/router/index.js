@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Mybook from '../views/Mybook.vue'
 import History from '../views/History.vue'
 import Detail from '../views/Detail.vue'
+import Chapter from '../views/Chapter.vue'
 
 Vue.use(VueRouter)
 
@@ -31,6 +32,11 @@ const routes = [
     path: '/detail',
     name: 'Detail',
     component: Detail,
+  },
+  {
+    path: '/chapter',
+    name: 'Chapter',
+    component: Chapter,
   },
 ]
 
