@@ -1,0 +1,21 @@
+var slice = function(arr, start, end){
+    if(arr){
+        return arr.slice(start, end);
+    }else{
+        return null;
+    }
+}
+
+
+var parseImageUrl = function(n){
+    if(n){
+        return decodeURIComponent(n.replace("/agent/",""))
+    }else{
+        return ""
+    }
+}
+
+module.exports = {
+    slice: slice,
+    parseImageUrl: parseImageUrl
+}

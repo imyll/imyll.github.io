@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "top-nav": "../../components/top-nav/top-nav"
+    "top-nav": "../../components/top-nav/top-nav",
+    "rank-list": "../../components/rank-list/rank-list"
   }
 }

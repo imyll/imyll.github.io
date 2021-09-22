@@ -10,7 +10,9 @@
         "pages/detail/detail",
         "pages/more-book/more-book",
         "pages/search/search",
-        "pages/chapter/chapter"
+        "pages/chapter/chapter",
+        "pages/read/read",
+        "pages/cate-book/cate-book"
     ],
     "window": {
         "backgroundTextStyle": "light",

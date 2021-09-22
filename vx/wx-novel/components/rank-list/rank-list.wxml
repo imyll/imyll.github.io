@@ -1,0 +1,15 @@
+<!--components/rank-list/rank-list.wxml-->
+<!-- <text>components/rank-list/rank-list.wxml</text> -->
+<view class="card">
+    <view class="icon">
+        <image></image>
+    </view>
+    <view class="right">
+        <view class="title">{{booklist.title}}</view>
+        <view class="shortintro">{{booklist.shortIntro}}</view>
+        <view class="inner">
+            <view class="author">{{booklist.author}}</view>
+            <view class="cate">{{booklist.minorCate}}</view>
+        </view>
+    </view>
+</view>

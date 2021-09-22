@@ -12,7 +12,7 @@ const {
       detail: Object,
       count: "",
       flag:true,
-      reviews: [],
+      reviews: null,
       latelyFollower: Number
     },
   
@@ -55,13 +55,15 @@ const {
         })
       })
       request({
-        url: "https://novel.kele8.cn/book/reviews?book=" + options.id
+        url: "https://novel.kele8.cn/book/reviews?book=" + options.id + "&limit=7"
       }).then(res => {
         // console.log(res.data.reviews);
-        var reviews = res.data.reviews.splice(0,7);
-        console.log(reviews);
+        // console.log(res.data.reviews[0].author.avatar);
+        // for(var i = 0; i < 7; i++){
+        //   console.log(res.data.reviews[i].author.avatar);
+        // }
         this.setData({
-          reviews: reviews,
+          reviews: res.data.reviews,
         })
       })
     },

@@ -1,8 +1,8 @@
 /* components/top-nav/top-nav.wxss */
 .title{
-    height: 132rpx;
+    height: 66px;
     background: #b83320;
     text-align: center;
-    line-height: 172rpx;
+    line-height: 86px;
     color: #fff;
 }

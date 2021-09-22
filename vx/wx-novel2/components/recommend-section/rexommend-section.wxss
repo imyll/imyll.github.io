@@ -1,0 +1,22 @@
+/* components/recommend-section/rexommend-section.wxss */
+page{
+    background: #f4f4f4;
+}
+.title{
+    font-weight: 600;
+    background: #fff;
+    margin-top:30rpx;
+    padding-left: 30rpx;
+    border-left: 3px solid #b83320;
+    
+}
+.list{
+    background: #fff;
+}
+.list .more{
+    color: #b93321;
+    font-size: 24rpx;
+    height: 90rpx;
+    text-align: center;
+    line-height: 95rpx;
+}

@@ -1,0 +1,2 @@
+<!--components/top-nav/top-nav.wxml-->
+<view class="title"><slot></slot></view>

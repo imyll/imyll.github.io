@@ -55,7 +55,7 @@
 <view class="comment">
     <view class="hot-comment">热门书评</view>
     <view class="reviews" wx:for="reviews" wx:key="index">
-        <view class="avatar"></view>
+        <image class="avatar" src="https://statics.zhuishushenqi.com{{reviews[index].author.avatar}}" />
         <view class="right">
             <view class="username">{{reviews[index].author.nickname}}</view>
             <view class="re-title">{{reviews[index].title}}</view>

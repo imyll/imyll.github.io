@@ -1,0 +1,146 @@
+.content{
+    padding: 40rpx;
+    display: flex;
+    .info{
+        margin-left: 20rpx;
+        .title{
+            font-size: 32rpx;
+            color: #000;
+        }
+        .sku{
+            margin-top: 20rpx;
+            font-size: 24rpx;
+            color: #999;
+            text{
+                margin: 0 16rpx;
+            }
+            i{
+                margin: 0 20rpx;
+            }
+            .author{
+                margin: 0;
+                color: #b93321;
+            }
+        }
+    }
+}
+.btn{
+    height: 130rpx;
+    border-bottom: 1px solid #ebebeb;
+position: relative;
+    button{
+        width: 300rpx;
+        position: absolute;
+        &.add{
+            border: 1px solid #b93321;
+            background: #fff;
+            color: #b93321;
+            left: 5%;
+        }
+        &.remove{
+            border: 1px solid #999;
+            background: #999;
+            color: #FFF;
+            left: 5%;
+        }
+        &.read{
+            border: 1px solid #b93321;
+            background: #b93321;
+            color: #fff;
+            right: 5%;
+        }
+    }
+}
+
+.read-data{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #ebebeb;
+    .item{
+        width: 33%;
+        text-align: center;
+        padding: 20px 0;
+        i{
+            color: #999;
+            font-size: 24rpx;
+        }
+        view{
+            margin-top: 10px;
+        }
+    }
+}
+
+// 书籍描述
+.desc{
+    padding: 20px;
+    color: #222;
+    font-size: 26rpx;
+    border-bottom: 1px solid #ebebeb;
+    line-height: 1.6;
+    text{
+        height: 129rpx;
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        align-content: center;
+
+    }
+}
+
+// 最新章节
+.list{
+    padding: 20px;
+    border: 1px solid #ebebeb;
+    display: flex;
+    font-size: 26rpx;
+    color: #333;
+    text{
+        position: absolute;
+        right: 0;
+        margin-right: 40rpx;
+        color: #999;
+    }
+}
+
+// 书籍评论
+.comment{
+    padding: 20px ;
+    .hot-comment{
+        font-size: 26rpx;
+    }
+    .reviews{
+        // margin-top: 40rpx;
+        padding: 20px 0;
+        display: flex;
+        border-bottom: 1px solid #ebebeb;
+    }
+    .avatar{
+        width: 35px;
+        height: 35px;
+        background: #eee;
+        border-radius: 50%;
+    }
+    .right {
+        margin-left: 20px;
+        font-size: 12px;
+        width: 270px;
+        .username{
+            color: #a58d5e;
+        }
+        .re-title{
+            font-weight: 700;
+            height: 16px;
+            padding: 8px 0;
+        }
+        .re-content{
+            color: #999;
+            height: 80rpx;
+            overflow: hidden;
+            text-align: justify;
+            line-height: 1.5;
+        }
+    }
+}

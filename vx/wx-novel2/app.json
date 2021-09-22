@@ -1,0 +1,53 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/cate/cate",
+        "pages/bookshelf/bookshelf",
+        "pages/rank/rank",
+        "pages/my/my",
+        "pages/detail/detail",
+        "pages/more-book/more-book",
+        "pages/search/search",
+        "pages/chapter/chapter"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#b83320",
+        "navigationBarTitleText": "追书神器",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
+    },
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/bookshelf/bookshelf",
+                "text": "书架"
+            },
+            {
+                "pagePath": "pages/cate/cate",
+                "text": "分类"
+            },
+            {
+                "pagePath": "pages/rank/rank",
+                "text": "排行"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index",
+        "van-search": "@vant/weapp/search/index",
+        "van-nav-bar": "@vant/weapp/nav-bar/index",
+        "van-image": "@vant/weapp/image/index"
+    }
+}

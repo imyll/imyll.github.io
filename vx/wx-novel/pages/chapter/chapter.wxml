@@ -1,4 +1,13 @@
 <!--pages/chapter/chapter.wxml-->
 <nav-bar>章节列表</nav-bar>
-<view>{{}}</view>
-<view wx:for="{{chapters}}" wx:key="_id">{{item.order}}{{item.title}}</view>
+<view class="top">
+    <view class="count">目录共{{chapters.length}}
+        <text class="sort" bindtap="reverse">{{reversed ? '正序' : '倒序'}}</text>
+    </view>
+</view>
+<view class="list">
+    <view wx:for="{{chapters}}" wx:key="_id" data-order="{{item.order}}" bindtap="navtoread">
+        <text>{{item.order}} </text>
+        <text>{{item.title}}</text>
+    </view>
+</view>

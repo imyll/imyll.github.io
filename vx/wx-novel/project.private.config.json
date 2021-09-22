@@ -47,6 +47,24 @@
                     "pathName": "pages/chapter/chapter",
                     "query": "id=53e56ee335f79bb626a496c9",
                     "scene": null
+                },
+                {
+                    "name": "pages/cate/cate",
+                    "pathName": "pages/cate/cate",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/read/read",
+                    "pathName": "pages/read/read",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/bookshelf/bookshelf",
+                    "pathName": "pages/bookshelf/bookshelf",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

@@ -1,0 +1,18 @@
+<!--components/book-item/book-item.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+
+<view class="card" data-id="{{book._id}}" bindtap="navtodetail">
+    <!-- <image class="thumb" mode="aspectFill" style="width:120rpx; height:180rpx" src="{{tools.parseImageUrl(book.cover)}}"></image> -->
+    <van-image class="thumb" width="120rpx" height="180rpx" lazy-load src="{{tools.parseImageUrl(book.cover)}}" />
+    <view class="right">
+        <view class="title">{{book.title}}</view>
+        <view class="desc">{{book.shortIntro}}</view>
+        <view class="info">
+            <view class="box">
+                <text class="cate">{{book.minorCate}} | </text>
+                <text class="pop">{{book.retentionRatio}}万人气</text>
+            </view>
+            <view class="tag">{{book.majorCate}}</view>
+        </view>
+    </view>
+</view>

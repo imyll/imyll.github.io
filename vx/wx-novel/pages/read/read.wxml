@@ -1,0 +1,9 @@
+<!--pages/read/read.wxml-->
+<!-- <nav-bar>{{content.title}}</nav-bar> -->
+<div class="nav-bar">
+    <van-nav-bar left-arrow left-text="返回" bind:click-left="onClickLeft">
+        <view class="title" slot="title">{{content.title}}</view>
+    </van-nav-bar>
+</div>
+<!-- <text>pages/read/read.wxml</text> -->
+<rich-text nodes="{{content.cpContent}}"></rich-text>

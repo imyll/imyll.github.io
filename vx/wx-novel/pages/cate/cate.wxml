@@ -1,2 +1,22 @@
 <!--pages/cate/cate.wxml-->
 <top-nav>分类</top-nav>
+<view>
+    <view class="category male">
+        <view class="ctitle">男生</view>
+        <view class="category-list">
+            <view class="postitle" wx:for="{{cates.male}}" wx:key="index" bindtap="navtocatebook" data-major="{{item}}">{{item.major}}</view>
+        </view>
+    </view>
+    <view class="category male">
+        <view class="ctitle">女生</view>
+        <view class="category-list">
+            <view class="postitle" wx:for="{{cates.female}}" :key="index" bindtap="navtocatebook" data-major="{{item}}">{{item.major}}</view>
+        </view>
+    </view>
+    <view class="category male">
+        <view class="ctitle">出版</view>
+        <view class="category-list">
+            <view class="postitle" wx:for="{{cates.press}}" :key="index" bindtap="navtocatebook" data-major="{{item}}">{{item.major}}</view>
+        </view>
+    </view>
+</view>

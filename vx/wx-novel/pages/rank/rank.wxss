@@ -1,1 +1,15 @@
-/* pages/rank/rank.wxss */
+.rank .left {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+.rank .left .title {
+  line-height: 4;
+  text-align: center;
+}
+.rank .right {
+  width: 80%;
+  height: 80%;
+  float: right;
+  overflow: scroll;
+}

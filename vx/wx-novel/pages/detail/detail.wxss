@@ -82,6 +82,7 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   align-content: center;
 }
 .list {
@@ -98,36 +99,38 @@
   color: #999;
 }
 .comment {
-  padding: 20px ;
+  padding: 20px;
 }
 .comment .hot-comment {
   font-size: 26rpx;
 }
 .comment .reviews {
   padding: 20px 0;
-  display: flex;
   border-bottom: 1px solid #ebebeb;
+  position: relative;
 }
-.comment .avatar {
-  width: 35px;
-  height: 35px;
-  background: #eee;
-  border-radius: 50%;
+.comment .reviews .avatar {
+  width: 33px;
+  height: 33px;
+  background: pink;
+  border-radius: 90rpx;
+  position: absolute;
+  left: 0;
 }
-.comment .right {
-  margin-left: 20px;
+.comment .reviews .right {
+  margin-left: 50px;
   font-size: 12px;
-  width: 270px;
+  width: 540rpx;
 }
-.comment .right .username {
+.comment .reviews .right .username {
   color: #a58d5e;
 }
-.comment .right .re-title {
+.comment .reviews .right .re-title {
   font-weight: 700;
   height: 16px;
   padding: 8px 0;
 }
-.comment .right .re-content {
+.comment .reviews .right .re-content {
   color: #999;
   height: 80rpx;
   overflow: hidden;

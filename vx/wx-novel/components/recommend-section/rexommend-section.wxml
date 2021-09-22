@@ -4,5 +4,5 @@
 <view class="title">{{item.title}}</view>
 <view class="list">
     <book-item wx:for="{{tools.slice(item.books, 0, 5)}}" wx:key="index" book="{{item}}"></book-item>
-    <view class="more" bindtap="navtomore" book="{{item}}">查看更多</view>
+    <view class="more" bindtap="navtomore" book="{{item}}">查看更多></view>
 </view>

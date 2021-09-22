@@ -26,5 +26,5 @@
 </swiper>
 
 <block wx:if="recommend[gnder].length">
-<recommend-section wx:for="{{recommend[gender]}}" item="{{item}}" wx:key="index"></recommend-section>
+    <recommend-section wx:for="{{recommend[gender]}}" item="{{item}}" wx:key="index"></recommend-section>
 </block>

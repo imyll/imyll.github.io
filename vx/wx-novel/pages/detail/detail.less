@@ -1,49 +1,61 @@
-.content{
+.content {
     padding: 40rpx;
     display: flex;
-    .info{
+
+    .info {
         margin-left: 20rpx;
-        .title{
+
+        .title {
             font-size: 32rpx;
             color: #000;
         }
-        .sku{
+
+        .sku {
             margin-top: 20rpx;
             font-size: 24rpx;
             color: #999;
-            text{
+
+            text {
                 margin: 0 16rpx;
             }
-            i{
+
+            i {
                 margin: 0 20rpx;
             }
-            .author{
+
+            .author {
                 margin: 0;
                 color: #b93321;
             }
         }
     }
 }
-.btn{
+
+// 按钮
+.btn {
     height: 130rpx;
     border-bottom: 1px solid #ebebeb;
-position: relative;
-    button{
+    position: relative;
+
+    button {
         width: 300rpx;
         position: absolute;
-        &.add{
+
+        &.add {
             border: 1px solid #b93321;
             background: #fff;
             color: #b93321;
             left: 5%;
         }
-        &.remove{
+
+        &.remove {
             border: 1px solid #999;
             background: #999;
             color: #FFF;
             left: 5%;
         }
-        &.read{
+
+        &.read {
             border: 1px solid #b93321;
             background: #b93321;
             color: #fff;
@@ -52,32 +64,37 @@ position: relative;
     }
 }
 
-.read-data{
+// 人气
+.read-data {
     display: flex;
     width: 100%;
     border-bottom: 1px solid #ebebeb;
-    .item{
+
+    .item {
         width: 33%;
         text-align: center;
         padding: 20px 0;
-        i{
+
+        i {
             color: #999;
             font-size: 24rpx;
         }
-        view{
+
+        view {
             margin-top: 10px;
         }
     }
 }
 
 // 书籍描述
-.desc{
+.desc {
     padding: 20px;
     color: #222;
     font-size: 26rpx;
     border-bottom: 1px solid #ebebeb;
     line-height: 1.6;
-    text{
+
+    text {
         height: 129rpx;
         text-overflow: -o-ellipsis-lastline;
         overflow: hidden;
@@ -91,13 +108,14 @@ position: relative;
 }
 
 // 最新章节
-.list{
+.list {
     padding: 20px;
     border: 1px solid #ebebeb;
     display: flex;
     font-size: 26rpx;
     color: #333;
-    text{
+
+    text {
         position: absolute;
         right: 0;
         margin-right: 40rpx;
@@ -106,41 +124,48 @@ position: relative;
 }
 
 // 书籍评论
-.comment{
-    padding: 20px ;
-    .hot-comment{
+.comment {
+    padding: 20px;
+
+    .hot-comment {
         font-size: 26rpx;
     }
-    .reviews{
-        // margin-top: 40rpx;
+
+    .reviews {
         padding: 20px 0;
-        display: flex;
         border-bottom: 1px solid #ebebeb;
-    }
-    .avatar{
-        width: 35px;
-        height: 35px;
-        background: #eee;
-        border-radius: 50%;
-    }
-    .right {
-        margin-left: 20px;
-        font-size: 12px;
-        width: 270px;
-        .username{
-            color: #a58d5e;
+        position: relative;
+        .avatar {
+            width: 33px;
+            height: 33px;
+            background: pink;
+            border-radius: 90rpx;
+            position: absolute;
+            left: 0;
         }
-        .re-title{
-            font-weight: 700;
-            height: 16px;
-            padding: 8px 0;
-        }
-        .re-content{
-            color: #999;
-            height: 80rpx;
-            overflow: hidden;
-            text-align: justify;
-            line-height: 1.5;
+        
+        .right {
+            margin-left: 50px;
+            font-size: 12px;
+            width:540rpx;
+            
+            .username {
+                color: #a58d5e;
+            }
+            
+            .re-title {
+                font-weight: 700;
+                height: 16px;
+                padding: 8px 0;
+            }
+            
+            .re-content {
+                color: #999;
+                height: 80rpx;
+                overflow: hidden;
+                text-align: justify;
+                line-height: 1.5;
+            }
         }
     }
 }

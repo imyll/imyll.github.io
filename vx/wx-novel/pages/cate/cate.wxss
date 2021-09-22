@@ -1,1 +1,19 @@
-/* pages/cate/cate.wxss */
+.category {
+  overflow: hidden;
+}
+.category .ctitle {
+  color: #999;
+  font-size: 24rpx;
+  padding: 0 14px;
+  height: 58px;
+  line-height: 58px;
+}
+.category .category-list .postitle {
+  width: 33%;
+  float: left;
+  text-align: center;
+  line-height: 2.5;
+  color: #333;
+  font-size: 15px;
+  font-weight: 700;
+}

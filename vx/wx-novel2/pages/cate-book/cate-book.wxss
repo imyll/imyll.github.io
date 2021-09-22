@@ -1,0 +1,52 @@
+.subcategory {
+  background: #f5f2ed;
+}
+.subcategory .card {
+  padding-left: 14px;
+  border-bottom: 1px solid #ebebeb;
+}
+.subcategory .card .container {
+  display: flex;
+  padding: 12px;
+  padding-left: 0;
+}
+.subcategory .card .container .thumb {
+  position: absolute;
+  left: 14px;
+}
+.subcategory .card .container .right {
+  width: 540rpx;
+  margin-left: 150rpx;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.6;
+}
+.subcategory .card .container .right .bookname {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 800;
+}
+.subcategory .card .container .right .author .split {
+  padding: 0 8px;
+}
+.subcategory .card .container .right .intro {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.subcategory .card .container .right .important {
+  color: #666;
+}
+.subcategory .card .container .right .important text {
+  color: #b93321;
+}
+.subcategory .card .container .right .important .split {
+  color: #999;
+  padding: 0 8px;
+}
+.subcategory .card .container .line {
+  width: 92%;
+  margin: 0 auto;
+  height: 1px;
+  background: #000;
+}

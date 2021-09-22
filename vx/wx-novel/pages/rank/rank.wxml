@@ -1,2 +1,11 @@
 <!--pages/rank/rank.wxml-->
 <top-nav>排行榜</top-nav>
+<view class="rank">
+    <view class="left">
+        <view class="title" wx:for="{{list}}" wx:key="index" booklist="booklist">{{list[index].shortTitle}}</view>
+    </view>
+    <view class="right">
+        <rank-list wx:for="{{booklist}}" wx:key="index" booklist="{{item}}"></rank-list>
+    </view>
+    <!-- <view>{{booklist[0].title}}</view> -->
+</view>

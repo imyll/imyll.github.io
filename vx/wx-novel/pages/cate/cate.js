@@ -1,18 +1,37 @@
 // pages/cate/cate.js
+const {
+    request
+} = require('../../utils/util.js')
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        cates: null,
+        flag: true
     },
-
+    navtocatebook: function (event) {
+        // console.log(event.currentTarget.dataset.major);
+        var data = JSON.stringify(event.currentTarget.dataset.major)
+        wx.navigateTo({
+            url: `/pages/cate-book/cate-book?data=${data}`,
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-
+    onLoad: function () {
+        request({
+            url: "http://novel.kele8.cn/sub-categories"
+        }).then(res => {
+            // console.log(res);
+            this.setData({
+                cates: res.data
+                // cmale: res.data.male
+            })
+        })
     },
 
     /**

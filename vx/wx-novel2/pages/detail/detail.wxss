@@ -1,0 +1,136 @@
+.content {
+  padding: 40rpx;
+  display: flex;
+}
+.content .info {
+  margin-left: 20rpx;
+}
+.content .info .title {
+  font-size: 32rpx;
+  color: #000;
+}
+.content .info .sku {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.content .info .sku text {
+  margin: 0 16rpx;
+}
+.content .info .sku i {
+  margin: 0 20rpx;
+}
+.content .info .sku .author {
+  margin: 0;
+  color: #b93321;
+}
+.btn {
+  height: 130rpx;
+  border-bottom: 1px solid #ebebeb;
+  position: relative;
+}
+.btn button {
+  width: 300rpx;
+  position: absolute;
+}
+.btn button.add {
+  border: 1px solid #b93321;
+  background: #fff;
+  color: #b93321;
+  left: 5%;
+}
+.btn button.remove {
+  border: 1px solid #999;
+  background: #999;
+  color: #FFF;
+  left: 5%;
+}
+.btn button.read {
+  border: 1px solid #b93321;
+  background: #b93321;
+  color: #fff;
+  right: 5%;
+}
+.read-data {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #ebebeb;
+}
+.read-data .item {
+  width: 33%;
+  text-align: center;
+  padding: 20px 0;
+}
+.read-data .item i {
+  color: #999;
+  font-size: 24rpx;
+}
+.read-data .item view {
+  margin-top: 10px;
+}
+.desc {
+  padding: 20px;
+  color: #222;
+  font-size: 26rpx;
+  border-bottom: 1px solid #ebebeb;
+  line-height: 1.6;
+}
+.desc text {
+  height: 129rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  align-content: center;
+}
+.list {
+  padding: 20px;
+  border: 1px solid #ebebeb;
+  display: flex;
+  font-size: 26rpx;
+  color: #333;
+}
+.list text {
+  position: absolute;
+  right: 0;
+  margin-right: 40rpx;
+  color: #999;
+}
+.comment {
+  padding: 20px ;
+}
+.comment .hot-comment {
+  font-size: 26rpx;
+}
+.comment .reviews {
+  padding: 20px 0;
+  display: flex;
+  border-bottom: 1px solid #ebebeb;
+}
+.comment .avatar {
+  width: 35px;
+  height: 35px;
+  background: #eee;
+  border-radius: 50%;
+}
+.comment .right {
+  margin-left: 20px;
+  font-size: 12px;
+  width: 270px;
+}
+.comment .right .username {
+  color: #a58d5e;
+}
+.comment .right .re-title {
+  font-weight: 700;
+  height: 16px;
+  padding: 8px 0;
+}
+.comment .right .re-content {
+  color: #999;
+  height: 80rpx;
+  overflow: hidden;
+  text-align: justify;
+  line-height: 1.5;
+}

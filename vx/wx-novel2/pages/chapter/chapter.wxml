@@ -1,0 +1,4 @@
+<!--pages/chapter/chapter.wxml-->
+<nav-bar>章节列表</nav-bar>
+<view>{{}}</view>
+<view wx:for="{{chapters}}" wx:key="_id">{{item.order}}{{item.title}}</view>

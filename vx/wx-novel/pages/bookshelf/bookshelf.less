@@ -1,0 +1,32 @@
+.tap{
+    width: 100%;
+    height: auto;
+    line-height: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text{
+        display: inline-block;
+        width: 40%;
+        text-align: center;
+        color: #999;
+        &.myshelf{
+            color: #b83320;
+            position: relative;
+            &::after{
+                content: "";
+                display: inline-block;
+                background: #b83320;
+                width: 40px;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -20px;
+            }
+        }
+        &.line{
+            width: 1px;
+        }
+    }
+}

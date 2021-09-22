@@ -1,0 +1,65 @@
+<!--pages/detail/detail.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+
+<nav-bar>书籍详情</nav-bar>
+
+<!-- 书籍详情 -->
+<view class="content">
+    <van-image class="thumb" width="120rpx" height="180rpx" lazy-load src="{{tools.parseImageUrl(detail.cover)}}" />
+    <view class="info">
+        <view class="title">{{detail.title}}</view>
+        <view class="sku">
+            <text class="author">{{detail.author}}</text>
+            <i>|</i>
+            <text class="cate">{{detail.cat}}</text>
+            <i>|</i>
+            <text class="count">{{count}}万字</text>
+        </view>
+    </view>
+</view>
+
+<!-- 按钮部分 -->
+<view class="btn">
+    <button class="add" wx:if="{{flag}}" bindtap="toggleShow">加入书架</button>
+    <button class="remove" wx:else bindtap="toggleShow">移出书架</button>
+    <button class="read" bindtap="navToRead">开始阅读</button>
+</view>
+
+<!-- 阅读数据部分 -->
+<view class="read-data">
+    <view class="item">
+        <i>追人气</i>
+        <view class="pop">{{latelyFollower}}万</view>
+    </view>
+    <view class="item">
+        <i>读者留存率</i>
+        <view class="follower">{{detail.retentionRatio}}%</view>
+    </view>
+    <view class="item">
+        <i>日更字数/天</i>
+        <view class="word-count">{{detail.serializeWordCount}}</view>
+    </view>
+</view>
+
+<!-- 书籍描述 -->
+<view class="desc">
+    <text>{{detail.longIntro}}</text>
+</view>
+
+<!-- 书籍目录 -->
+<view class="list" bindtap="navToChapter" data-id="{{detail._id}}">目录
+    <text>{{detail.lastChapter}}</text>
+</view>
+
+<!-- 书籍评论 -->
+<view class="comment">
+    <view class="hot-comment">热门书评</view>
+    <view class="reviews" wx:for="reviews" wx:key="index">
+        <view class="avatar"></view>
+        <view class="right">
+            <view class="username">{{reviews[index].author.nickname}}</view>
+            <view class="re-title">{{reviews[index].title}}</view>
+            <view class="re-content">{{reviews[index].content}}</view>
+        </view>
+    </view>
+</view>
