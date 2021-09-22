@@ -1,1 +1,55 @@
-/* pages/my/my.wxss */
+page {
+  background: #f4f4f4;
+}
+.my-title {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.login {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.login .f-login {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 12px;
+}
+.login .f-login.qq {
+  background: #4d99e7;
+  color: #4d99e7;
+}
+.login .f-login.sina {
+  background: #e34737;
+  color: #e34737;
+}
+.login .f-login image {
+  margin-top: 10px;
+  width: 35px;
+  height: 35px;
+}
+.search {
+  height: 54px;
+  padding: 14px;
+}
+.search .weui-input {
+  background: #fff;
+  height: 30px;
+  width: 80%;
+  float: left;
+}
+.search .sousuo {
+  height: 30px;
+  padding: 0 5px;
+  background: #fff;
+  float: right;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+}

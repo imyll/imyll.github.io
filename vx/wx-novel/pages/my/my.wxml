@@ -1,2 +1,21 @@
 <!--pages/my/my.wxml-->
 <top-nav>登录</top-nav>
+<view class="content">
+    <view class="my-title">------第三方快捷登录------</view>
+    <view class="login">
+        <view class="qq f-login">
+            <image src="../../images/QQ.png"></image>
+            QQ
+        </view>
+        <view class="sina f-login">
+            <image src="../../images/sina.png"></image>
+            微博    
+        </view>
+    </view>
+
+    <!-- 搜索框 -->
+    <view class="search">
+        <input class="weui-input" auto-focus/>
+        <view class="sousuo">搜索</view>
+    </view>
+</view>

@@ -4,7 +4,7 @@
     <view class="icon">
         <image></image>
     </view>
-    <view class="right">
+    <view class="l-right">
         <view class="title">{{booklist.title}}</view>
         <view class="shortintro">{{booklist.shortIntro}}</view>
         <view class="inner">

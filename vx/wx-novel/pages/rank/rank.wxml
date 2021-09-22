@@ -2,7 +2,7 @@
 <top-nav>排行榜</top-nav>
 <view class="rank">
     <view class="left">
-        <view class="title" wx:for="{{list}}" wx:key="index" booklist="booklist">{{list[index].shortTitle}}</view>
+        <view class="title" wx:for="{{list}}" wx:key="index" booklist="booklist" data-id="{{item._id}}" bindtap="navranklist">{{item.shortTitle}}</view>
     </view>
     <view class="right">
         <rank-list wx:for="{{booklist}}" wx:key="index" booklist="{{item}}"></rank-list>

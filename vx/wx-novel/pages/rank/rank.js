@@ -17,23 +17,23 @@ Page({
             url: 'https://novel.kele8.cn/rank-category',
             success: (result) => {
               //   console.log(result);
-                var list = result.data.male.splice(0,3);
-                // console.log(list);
-                console.log(list[0].shortTitle);
+                var list = result.data.male;
+                console.log(list);
+                // console.log(list[0].shortTitle);
                 this.setData({
-                    list:list
+                    list:result.data.male
+                })
+                wx.request({
+                  url: 'http://novel.kele8.cn/rank/54d42d92321052167dfb75e3',
+                  success: (result) => {
+                    //   console.log(result);
+                      this.setData({
+                          booklist:result.data.ranking.books
+                      })
+                  },
                 })
             },
           });
-          wx.request({
-            url: 'http://novel.kele8.cn/rank/54d42d92321052167dfb75e3',
-            success: (result) => {
-                console.log(result);
-                this.setData({
-                    booklist:result.data.ranking.books
-                })
-            },
-          })
     },
 
     /**
