@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        var show = true;
+        function showGreet(){
+            if(show){
+                return <p>条件为真显示</p>
+            }
+            return <p>条件为假显示</p>
+        }
+        var element = (
+            <div>
+                <h3>Hello</h3>
+                {showGreet()}
+                <p>{show ? (<p>条件为真显示</p>) : (<p>条件为假显示</p>)}</p>
+            </div>
+        )
+        ReactDOM.render(element, document.getElementById("app"));
+    </script>
+</body>
+
+</html>

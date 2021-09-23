@@ -9,7 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        cates: null,
+        // cates: null,
         flag: true
     },
     navtocatebook: function (event) {
@@ -26,7 +26,7 @@ Page({
         request({
             url: "http://novel.kele8.cn/sub-categories"
         }).then(res => {
-            // console.log(res);
+            console.log(res);
             this.setData({
                 cates: res.data
                 // cmale: res.data.male

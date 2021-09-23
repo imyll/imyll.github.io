@@ -40,7 +40,7 @@ Page({
             //   chapters: res2.data.chapters.slice(0, 100);
             // })
             // console.log(sourseId);
-            var cs = res2.data.chapters;
+            cs = res2.data.chapters;
             this.setData({
               chapters: cs.slice(0, 100)
             })
@@ -52,7 +52,7 @@ Page({
   navtoread:function(event){
     wx.navigateTo({
       url:`/pages/read/read?bookid=${this.data.bookid}&order=${event.currentTarget.dataset.order}`,
-      success:() => {
+      success:(res) => {
         content:res.data
       }
     })
@@ -95,7 +95,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    // console.log(cs);
+    console.log(cs);
     this.setData({
       page: this.data.page + 1
     }, () => {
