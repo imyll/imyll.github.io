@@ -5,11 +5,8 @@
 <view class="category" wx:for="{{cates}}" wx:for-index="key" wx:key="index">
     <block wx:if="{{key != 'ok'}}">
         <view class="title">{{tools.translate(key)}}</view>
-        <!-- <view class="category-list">
-            <view wx:for="{{item}}" wx:for-item="cate">{{cate.name}}</view>
-        </view> -->
         <van-grid column-num="3" class="category-list">
-            <van-grid-item class="item" use-slot="{{true}}" wx:for="{{item}}" wx:for-item="cate" wx:key="index" bindtap="navToCatebook" data-name="{{cate.name}}">
+            <van-grid-item class="item" use-slot="{{true}}" wx:for="{{item}}" wx:for-item="cate" wx:key="index" bindtap="navToCatebook" data-name="{{cate.name}}" data-gender="{{key}}">
                 <view class="name">{{cate.name}}</view>
                 <view class="count">{{cate.bookCount}}</view>
             </van-grid-item>

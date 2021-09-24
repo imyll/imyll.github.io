@@ -2,5 +2,11 @@
 <nav-bar>玄幻</nav-bar>
 <!-- <text>pages/cate-book/cata-book.wxml</text> -->
 
-<view wx:for="{{data}}" wx:key="index">{{item.text}}</view>
+<view class="filter-item">
+    <text data-filter="{{item}}" bindtap="changeFilter" class="{{currentFilter.text === item.text ? 'active' : ''}}" wx:for="{{filter}}" wx:key="index">{{item.text}}</text>
+</view>
+<view class="filter-item">
+    <text data-subs="{{item}}" bindtap="changeSub" class="{{currentSubs === item ? 'active' : ''}}" wx:for="{{subs}}" wx:key="index">{{item}}</text>
+</view>
 <view wx:for="{{cateBooks}}" wx:key="index">{{item.title}}</view>
+<view wx:if="{{hasMore}}">======我们正在努力进书中======</view>

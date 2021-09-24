@@ -14,8 +14,9 @@ Page({
     },
     navToCatebook: function (event) {
         //    console.log(event.currentTarget.dataset.name);
+        // console.log(event.currentTarget.dataset.gender);
         wx.navigateTo({
-          url: '/pages/cate-book/cate-book?major='+event.currentTarget.dataset.name,
+          url: '/pages/cate-book/cate-book?major='+event.currentTarget.dataset.name + '&gender='+event.currentTarget.dataset.gender,
         })
     },
     /**

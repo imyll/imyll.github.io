@@ -5,47 +5,108 @@ Page({
      * 页面的初始数据
      */
     data: {
-        cateBooks:null,
-        data:[{
-            text:"热门",
-            type:"hot"
-        },{
-            text:"新书",
-            type:"new"
-        },{
-            text:"好评",
-            type:"reputation"
-        },{
-            text:"完结",
-            type:"over"
-        },{
-            text:"包月",
-            type:"monthly"
-        }]
+        gender: '',
+        cateBooks: null,
+        subCategories: null,
+        filter: [{
+            text: "热门",
+            type: "hot"
+        }, {
+            text: "新书",
+            type: "new"
+        }, {
+            text: "好评",
+            type: "reputation"
+        }, {
+            text: "完结",
+            type: "over"
+        }, {
+            text: "包月",
+            type: "monthly"
+        }],
+        subs: [],
+        currentFilter: null,
+        currentSubs: '',
+        page: 0,
+        hasMore:false
     },
-
+    changeFilter(e) {
+        // console.log(e.currentTarget.dataset.filter);
+        this.setData({
+            currentFilter: e.currentTarget.dataset.filter
+        }, () => {
+            this.getBooks()
+        })
+    },
+    changeSub(e) {
+        // console.log(e.currentTarget.dataset.subs);
+        this.setData({
+            currentSubs: e.currentTarget.dataset.subs
+        }, () => {
+            this.getBooks()
+        })
+    },
+    getBooks() {
+        wx.showLoading({
+            title: '加载中',
+          })
+        wx.request({
+            url: 'http://novel.kele8.cn/category-info',
+            data: {
+                gender: this.data.gender,
+                type: this.data.currentFilter.type,
+                major: this.data.major,
+                minor: this.data.currentSubs,
+                start: this.data.page,
+                limit: 20,
+            },
+            header: {
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            success: (result) => {
+                console.log(result);
+                this.setData({
+                    cateBooks: result.data.books
+                })
+                if(result.data.books.length === 0){
+                    this.setData({
+                        hasMore:true
+                    })
+                }else{
+                    this.setData({
+                        hasMore:false
+                    })
+                }
+            },
+            complete:()=>{
+                wx.hideLoading()
+            }
+        });
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options.major);
-        wx.request({
-          url: 'http://novel.kele8.cn/sub-categories',
-          success: (result) => {
-              console.log(result);
-          },
-          fail: (res) => {},
-          complete: (res) => {},
+        // console.log(options.major);
+        // console.log(options.gender);
+        this.setData({
+            gender: options.gender,
+            major: options.major,
+            currentFilter: this.data.filter[0]
         })
         wx.request({
-          url: 'https://novel.kele8.cn/category-info?gender=male&type=hot&major='+options.major+'&minor=&start=0&limit=20',
-          success: (res) =>{
-            console.log(res);
-            this.setData({
-                cateBooks: res.data.books
-            })
-          }
+            url: 'http://novel.kele8.cn/sub-categories',
+            success: (result) => {
+                // console.log(result);
+                this.setData({
+                    subCategories: result.data,
+                    subs: result.data[options.gender].find(item => item.major === options.major).mins,
+                    currentSubs: result.data[options.gender].find(item => item.major === options.major).mins[0]
+                })
+            },
         })
+        this.getBooks()
+
     },
 
     /**
