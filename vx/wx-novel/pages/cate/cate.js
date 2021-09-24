@@ -12,11 +12,10 @@ Page({
         // cates: null,
         flag: true
     },
-    navtocatebook: function (event) {
-        // console.log(event.currentTarget.dataset.major);
-        var data = JSON.stringify(event.currentTarget.dataset.major)
+    navToCatebook: function (event) {
+        //    console.log(event.currentTarget.dataset.name);
         wx.navigateTo({
-            url: `/pages/cate-book/cate-book?data=${data}`,
+          url: '/pages/cate-book/cate-book?major='+event.currentTarget.dataset.name,
         })
     },
     /**
@@ -24,12 +23,11 @@ Page({
      */
     onLoad: function () {
         request({
-            url: "http://novel.kele8.cn/sub-categories"
+            url: "http://novel.kele8.cn/categories"
         }).then(res => {
             console.log(res);
             this.setData({
                 cates: res.data
-                // cmale: res.data.male
             })
         })
     },

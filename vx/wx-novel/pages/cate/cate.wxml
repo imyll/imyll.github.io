@@ -1,10 +1,18 @@
 <!--pages/cate/cate.wxml-->
+<wxs src='../../utils/tools.wxs' module="tools"></wxs>
+
 <top-nav>分类</top-nav>
-<view>
-    <view class="category male">
-        <view class="ctitle">男生</view>
-        <view class="category-list">
-            <view class="postitle" wx:for="{{cates.male}}" wx:key="index" bindtap="navtocatebook" data-major="{{item}}">{{item.major}}</view>
-        </view>
-    </view>
+<view class="category" wx:for="{{cates}}" wx:for-index="key" wx:key="index">
+    <block wx:if="{{key != 'ok'}}">
+        <view class="title">{{tools.translate(key)}}</view>
+        <!-- <view class="category-list">
+            <view wx:for="{{item}}" wx:for-item="cate">{{cate.name}}</view>
+        </view> -->
+        <van-grid column-num="3" class="category-list">
+            <van-grid-item class="item" use-slot="{{true}}" wx:for="{{item}}" wx:for-item="cate" wx:key="index" bindtap="navToCatebook" data-name="{{cate.name}}">
+                <view class="name">{{cate.name}}</view>
+                <view class="count">{{cate.bookCount}}</view>
+            </van-grid-item>
+        </van-grid>
+    </block>
 </view>

@@ -1,29 +1,6 @@
-<!--pages/cate-book/cate-book.wxml-->
-<wxs src="../../utils/tools.wxs" module="tools"></wxs>
-<nav-bar>{{data.major}}</nav-bar>
-<!-- <text>pages/cate-book/cate-book.wxml</text> -->
-<view class="subcategory">
-    <view class="card" wx:for="{{bookdata.books}}" wx:key="index">
-        <view class="container">
-            <!-- <view>{{index}}</view> -->
-            <van-image class="thumb" width="110rpx" height="150rpx" lazy-load
-                src="{{tools.parseImageUrl(item.cover)}}" />
-            <view class="right">
-                <view class="bookname">{{item.title}}</view>
-                <view class="author">
-                    {{item.author}}
-                    <text class="split"> | </text>
-                    {{item.majorCate}}
-                </view>
-                <view class="intro">{{item.shortIntro}}</view>
-                <view class="important">
-                    <text>{{item.latelyFollower}}</text>
-                    万人气
-                    <text class="split"> | </text>
-                    <text>{{item.retentionRatio}}</text>
-                    读者留存
-                </view>
-            </view>
-        </view>
-    </view>
-</view>
+<!--pages/cate-book/cata-book.wxml-->
+<nav-bar>玄幻</nav-bar>
+<!-- <text>pages/cate-book/cata-book.wxml</text> -->
+
+<view wx:for="{{data}}" wx:key="index">{{item.text}}</view>
+<view wx:for="{{cateBooks}}" wx:key="index">{{item.title}}</view>

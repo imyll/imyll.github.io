@@ -15,7 +15,21 @@ var parseImageUrl = function(n){
     }
 }
 
+var translate = function(n){
+    switch (n) {
+        case "male":
+            return "男生"
+        case "female":
+            return "女生"
+        case "picture":
+            return "漫画"
+        default:
+            return "出版"
+    }
+}
+
 module.exports = {
     slice: slice,
-    parseImageUrl: parseImageUrl
+    parseImageUrl: parseImageUrl,
+    translate:translate
 }

@@ -1,35 +1,50 @@
 // pages/cate-book/cate-book.js
-const {
-    request
-} = require('../../utils/util.js')
-
 Page({
+
     /**
      * 页面的初始数据
      */
     data: {
-        data:null,
-        bookData:null
+        cateBooks:null,
+        data:[{
+            text:"热门",
+            type:"hot"
+        },{
+            text:"新书",
+            type:"new"
+        },{
+            text:"好评",
+            type:"reputation"
+        },{
+            text:"完结",
+            type:"over"
+        },{
+            text:"包月",
+            type:"monthly"
+        }]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var data = JSON.parse(options.data); 
-        // console.log(data);
-        this.setData({
-            data:data
-        });
-        // console.log(data.major);
-        // console.log(this.data.cates);
-        request({
-          url: `https://novel.kele8.cn/category-info?gender=male&type=hot&major=${data.major}&start=0&limit=20`
-        }).then((res) => {
+        console.log(options.major);
+        wx.request({
+          url: 'http://novel.kele8.cn/sub-categories',
+          success: (result) => {
+              console.log(result);
+          },
+          fail: (res) => {},
+          complete: (res) => {},
+        })
+        wx.request({
+          url: 'https://novel.kele8.cn/category-info?gender=male&type=hot&major='+options.major+'&minor=&start=0&limit=20',
+          success: (res) =>{
             console.log(res);
             this.setData({
-                bookdata: res.data
+                cateBooks: res.data.books
             })
+          }
         })
     },
 

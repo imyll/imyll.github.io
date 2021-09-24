@@ -1,19 +1,15 @@
 .category {
-  overflow: hidden;
+  padding: 14px;
 }
-.category .ctitle {
+.category .title {
+  font-size: 12px;
   color: #999;
-  font-size: 24rpx;
-  padding: 0 14px;
-  height: 58px;
-  line-height: 58px;
 }
-.category .category-list .postitle {
-  width: 33%;
-  float: left;
-  text-align: center;
-  line-height: 2.5;
+.category .category-list .item .name {
   color: #333;
-  font-size: 15px;
   font-weight: 700;
+}
+.category .category-list .item .count {
+  color: #ccc;
+  font-size: 12px;
 }
