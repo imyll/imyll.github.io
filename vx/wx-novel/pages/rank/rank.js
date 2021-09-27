@@ -5,42 +5,59 @@ Page({
      * 页面的初始数据
      */
     data: {
-        list:null,
-        booklist:null
+        gender: "male",
+        rankcate: null,
+        list: null,
+        booklist: null,
     },
-
+    changeGender: function (e) {
+        // console.log(e);
+        this.setData({
+            gender: e.currentTarget.dataset.gender || 'male',
+        })
+        console.log(!this.data.flag)
+    },
+    getRankBook: function(e){
+        // console.log(e.currentTarget.dataset.id);
+        wx.request({
+          url: 'http://novel.kele8.cn/rank/'+e.currentTarget.dataset.id,
+          success: (res) => {
+              console.log(res);
+          },
+          fail: (res) => {},
+          complete: (res) => {},
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        // console.log(options);
         wx.request({
             url: 'https://novel.kele8.cn/rank-category',
             success: (result) => {
-              //   console.log(result);
-                var list = result.data.male;
-                console.log(list);
-                // console.log(list[0].shortTitle);
+                console.log(result.data);
                 this.setData({
-                    list:result.data.male
+                    rankcate: result.data
                 })
                 wx.request({
                   url: 'http://novel.kele8.cn/rank/54d42d92321052167dfb75e3',
                   success: (result) => {
-                    //   console.log(result);
+                      console.log(result);
                       this.setData({
                           booklist:result.data.ranking.books
                       })
                   },
                 })
             },
-          });
+        });
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-      
+
     },
 
     /**

@@ -53,7 +53,7 @@ Page({
   },
 
   changeGender: function (event) {
-    console.log(event);
+    // console.log(event);
     this.setData({
       gender: event.currentTarget.dataset.gender || 'male'
     })

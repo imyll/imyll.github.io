@@ -5,11 +5,17 @@ Page({
      * 页面的初始数据
      */
     data: {
-        content:{}
+        content:{},
+        shows:false
     },
     onClickLeft:function(){
         wx.navigateBack({
 
+        })
+    },
+    changeShows:function(){
+        this.setData({
+            shows:!this.data.shows
         })
     },
 

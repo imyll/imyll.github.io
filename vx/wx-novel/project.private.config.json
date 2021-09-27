@@ -77,6 +77,12 @@
                     "pathName": "pages/cate-book/cate-book",
                     "query": "major=玄幻&gender=male",
                     "scene": null
+                },
+                {
+                    "name": "pages/bookshelf/bookshelf",
+                    "pathName": "pages/bookshelf/bookshelf",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

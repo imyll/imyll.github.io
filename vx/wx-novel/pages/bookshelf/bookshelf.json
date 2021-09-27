@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "top-nav": "../../components/top-nav/top-nav"
-  }
+    "top-nav": "../../components/top-nav/top-nav",
+    "book-item": "/components/book-item/book-item"
+  },
+  "enablePullDownRefresh": true
 }

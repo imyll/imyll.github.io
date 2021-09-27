@@ -1,5 +1,5 @@
 <!--pages/cate-book/cata-book.wxml-->
-<nav-bar>玄幻</nav-bar>
+<nav-bar>{{major}}</nav-bar>
 <!-- <text>pages/cate-book/cata-book.wxml</text> -->
 
 <view class="filter-item">
@@ -8,5 +8,6 @@
 <view class="filter-item">
     <text data-subs="{{item}}" bindtap="changeSub" class="{{currentSubs === item ? 'active' : ''}}" wx:for="{{subs}}" wx:key="index">{{item}}</text>
 </view>
-<view wx:for="{{cateBooks}}" wx:key="index">{{item.title}}</view>
-<view wx:if="{{hasMore}}">======我们正在努力进书中======</view>
+<!-- <view wx:for="{{cateBooks}}" wx:key="index">{{item.title}}</view>/ -->
+<book-item wx:for="{{cateBooks}}" wx:key="index" book="{{item}}"></book-item>
+<view wx:if="{{hasMore}}">======正在努力进书中======</view>

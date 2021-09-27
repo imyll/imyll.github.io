@@ -5,3 +5,11 @@
     <text class="line">|</text>
     <text>阅读记录</text>
 </view>
+
+<van-swipe-cell class="book-item" wx:for="{{books}}" wx:key="index" right-width="{{ 65 }}" bind:click="click" data-id="{{item._id}}">
+  <van-cell-group>
+    <book-item book="{{item}}"></book-item>
+  </van-cell-group>
+  <view slot="right" class="del">删除</view>
+</van-swipe-cell>
+

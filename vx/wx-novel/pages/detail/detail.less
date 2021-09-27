@@ -135,6 +135,7 @@
         padding: 20px 0;
         border-bottom: 1px solid #ebebeb;
         position: relative;
+
         .avatar {
             width: 33px;
             height: 33px;
@@ -143,28 +144,32 @@
             position: absolute;
             left: 0;
         }
-        
+
         .right {
             margin-left: 50px;
             font-size: 12px;
-            width:540rpx;
-            
+            width: 540rpx;
+
             .username {
                 color: #a58d5e;
             }
-            
+
             .re-title {
                 font-weight: 700;
                 height: 16px;
                 padding: 8px 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
-            
+
             .re-content {
                 color: #999;
-                height: 80rpx;
-                overflow: hidden;
-                text-align: justify;
                 line-height: 1.5;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
             }
         }
     }

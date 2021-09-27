@@ -25,15 +25,17 @@ Page({
             type: "monthly"
         }],
         subs: [],
+        major: null,
         currentFilter: null,
         currentSubs: '',
         page: 0,
-        hasMore:false
+        hasMore: false
     },
     changeFilter(e) {
         // console.log(e.currentTarget.dataset.filter);
         this.setData({
-            currentFilter: e.currentTarget.dataset.filter
+            currentFilter: e.currentTarget.dataset.filter,
+            page: 0
         }, () => {
             this.getBooks()
         })
@@ -41,7 +43,8 @@ Page({
     changeSub(e) {
         // console.log(e.currentTarget.dataset.subs);
         this.setData({
-            currentSubs: e.currentTarget.dataset.subs
+            currentSubs: e.currentTarget.dataset.subs,
+            page: 0
         }, () => {
             this.getBooks()
         })
@@ -49,7 +52,7 @@ Page({
     getBooks() {
         wx.showLoading({
             title: '加载中',
-          })
+        })
         wx.request({
             url: 'http://novel.kele8.cn/category-info',
             data: {
@@ -64,21 +67,28 @@ Page({
                 "content-type": "application/x-www-form-urlencoded"
             },
             success: (result) => {
-                console.log(result);
-                this.setData({
-                    cateBooks: result.data.books
-                })
-                if(result.data.books.length === 0){
+                // console.log(result);
+                if (this.data.page) {
                     this.setData({
-                        hasMore:true
+                        cateBooks: [...this.data.cateBooks, ...result.data.books]
                     })
-                }else{
+                } else {
                     this.setData({
-                        hasMore:false
+                        cateBooks: result.data.books
+                    })
+                }
+
+                if (result.data.books.length === 0) {
+                    this.setData({
+                        hasMore: true
+                    })
+                } else {
+                    this.setData({
+                        hasMore: false
                     })
                 }
             },
-            complete:()=>{
+            complete: () => {
                 wx.hideLoading()
             }
         });
@@ -87,7 +97,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // console.log(options.major);
+        console.log(options.major);
         // console.log(options.gender);
         this.setData({
             gender: options.gender,
@@ -141,14 +151,18 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        this.getBooks();
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+        this.setData({
+            page: this.data.page + 1
+        }, () => {
+            this.getBooks()
+        })
     },
 
     /**

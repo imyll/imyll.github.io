@@ -10,7 +10,7 @@
         <view class="info">
             <view class="box">
                 <text class="cate">{{book.minorCate}} | </text>
-                <text class="pop">{{book.retentionRatio}}万人气</text>
+                <text class="pop">{{book.latelyFollower}}人气</text>
             </view>
             <view class="tag">{{book.majorCate}}</view>
         </view>

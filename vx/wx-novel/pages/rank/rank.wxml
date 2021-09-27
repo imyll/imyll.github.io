@@ -1,11 +1,15 @@
 <!--pages/rank/rank.wxml-->
 <top-nav>排行榜</top-nav>
+<view class="nav">
+    <view data-gender="male" class="male {{gender === male ? 'active':''}}" bindtap="changeGender">男频</view>
+    <view data-gender="female" class="female {{gender === female ? 'active':''}}" bindtap="changeGender">女频</view>
+</view>
 <view class="rank">
     <view class="left">
-        <view class="title" wx:for="{{list}}" wx:key="index" booklist="booklist" data-id="{{item._id}}" bindtap="navranklist">{{item.shortTitle}}</view>
+        <view class="title" wx:for="{{rankcate[gender]}}" wx:key="index" bindtap="getRankBook" data-id="{{item._id}}">
+            {{item.shortTitle}}</view>
     </view>
     <view class="right">
-        <rank-list wx:for="{{booklist}}" wx:key="index" booklist="{{item}}"></rank-list>
+        <view class="r-title" wx:for="{{booklist}}">{{item.title}}</view>
     </view>
-    <!-- <view>{{booklist[0].title}}</view> -->
 </view>

@@ -1,23 +1,31 @@
+.nav {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #ebebeb;
+}
+.nav view {
+  width: 50%;
+  text-align: center;
+  line-height: 3;
+}
+.nav view.active {
+  color: red;
+}
 .rank {
   height: 100vh;
   overflow: hidden;
 }
 .rank .left {
-  width: 18%;
-  height: 500px;
+  width: 20%;
+  height: 100%;
+  background: pink;
+  text-align: center;
+  overflow-y: scroll;
   float: left;
-  padding: 0 14px;
-  font-size: 14px;
-  overflow: scroll;
 }
 .rank .left .title {
-  line-height: 4;
-  text-align: center;
+  padding: 8px;
 }
 .rank .right {
-  width: 70%;
-  height: 500px;
-  float: left;
-  padding-right: 10px;
-  overflow: scroll;
+  float: right;
 }

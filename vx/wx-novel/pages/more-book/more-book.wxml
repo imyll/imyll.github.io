@@ -1,2 +1,3 @@
 <!--pages/more-book/more-book.wxml-->
 <nav-bar></nav-bar>
+<book-item wx:for=""></book-item>

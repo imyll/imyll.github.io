@@ -6,4 +6,13 @@
     </van-nav-bar>
 </div>
 <!-- <text>pages/read/read.wxml</text> -->
-<rich-text nodes="{{content.cpContent}}"></rich-text>
+<div class="content" bindtap="changeShows">
+    <view>{{content.title}}</view>
+    <rich-text class="content-details" nodes="{{content.cpContent}}"></rich-text>
+</div>
+
+<view class="bar" wx:if="{{shows}}">
+    <view>上一章</view>
+    <view>目录</view>
+    <view>下一章</view>
+</view>
