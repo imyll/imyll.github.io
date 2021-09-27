@@ -1,15 +1,28 @@
 <!--pages/rank/rank.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+
 <top-nav>排行榜</top-nav>
 <view class="nav">
-    <view data-gender="male" class="male {{gender === male ? 'active':''}}" bindtap="changeGender">男频</view>
-    <view data-gender="female" class="female {{gender === female ? 'active':''}}" bindtap="changeGender">女频</view>
+    <view data-gender="male" class="male" bindtap="changeGender" data-id="54d42d92321052167dfb75e3">男频</view>
+    <view data-gender="female" class="female" bindtap="changeGender" data-id="54d43437d47d13ff21cad58b">女频</view>
 </view>
 <view class="rank">
     <view class="left">
-        <view class="title" wx:for="{{rankcate[gender]}}" wx:key="index" bindtap="getRankBook" data-id="{{item._id}}">
-            {{item.shortTitle}}</view>
+        <view class="title {{}}" wx:for="{{rankcate[gender]}}" wx:key="index" bindtap="getRankBook" data-id="{{item._id}}">
+            <view class="list">{{item.shortTitle}}</view>
+        </view>
     </view>
     <view class="right">
-        <view class="r-title" wx:for="{{booklist}}">{{item.title}}</view>
+        <view class="r-book" wx:for="{{booklist}}" wx:key="index" bindtap="navToDetail" data-id="{{item._id}}">
+            <van-image class="cover" width="58px" height="84px" lazy-load src="{{tools.parseImageUrl(item.cover)}}" />
+            <view class="inner">
+                <view class="booktitle">{{index+1}}.{{item.title}}</view>
+                <view class="desc">{{item.shortIntro}}</view>
+                <view class="sku">
+                    <view class="author">{{item.author}}</view>
+                    <view class="minorcate">{{item.minorCate}}</view>
+                </view>
+            </view>
+        </view>
     </view>
 </view>

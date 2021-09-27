@@ -112,7 +112,7 @@
 .comment .reviews .avatar {
   width: 33px;
   height: 33px;
-  background: pink;
+  background: #ebebeb;
   border-radius: 90rpx;
   position: absolute;
   left: 0;
@@ -125,12 +125,15 @@
 .comment .reviews .right .username {
   color: #a58d5e;
 }
-.comment .reviews .right .re-title {
+.comment .reviews .right .reader-title {
   font-weight: 700;
   height: 16px;
   padding: 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.comment .reviews .right .re-content {
+.comment .reviews .right .reader-content {
   color: #999;
   line-height: 1.5;
   display: -webkit-box;

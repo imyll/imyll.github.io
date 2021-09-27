@@ -14,7 +14,8 @@ Page({
     count: "",
     isExit: false,
     reviews: null,
-    latelyFollower: Number
+    latelyFollower: Number,
+    recommendbooks:null
   },
 
   navToChapter: function (event) {
@@ -78,7 +79,7 @@ Page({
         count: num,
         latelyFollower: value
       })
-    })
+    });
     request({
       url: "https://novel.kele8.cn/book/reviews?book=" + options.id + "&limit=7"
     }).then(res => {
@@ -90,6 +91,15 @@ Page({
       this.setData({
         reviews: res.data.reviews,
       })
+    });
+    wx.request({
+      url: 'http://novel.kele8.cn/recommend/'+options.id,
+      success: (res) => {
+        console.log(res);
+        this.setData({
+          recommendbooks:res.data.books
+        })
+      },
     })
 
     var isExit = this.getIsExit(options.id)

@@ -58,8 +58,17 @@
         <image class="avatar" src="https://statics.zhuishushenqi.com{{reviews[index].author.avatar}}" />
         <view class="right">
             <view class="username">{{reviews[index].author.nickname}}</view>
-            <view class="re-title">{{reviews[index].title}}</view>
-            <view class="re-content">{{reviews[index].content}}</view>
+            <view class="reader-title">{{reviews[index].title}}</view>
+            <view class="reader-content">{{reviews[index].content}}</view>
         </view>
     </view>
 </view>
+
+<!-- 相关推荐 -->
+<!-- <view class="relevant-recommend">
+    <view class="recommend-title">你可能感兴趣</view>
+    <view class="content c-book-column-list" wx:for="{{recommendbooks}}">
+        <van-image src=""></van-image>
+        <view>{{item.title}}</view>
+    </view>
+</view> -->

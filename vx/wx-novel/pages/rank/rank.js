@@ -15,17 +15,48 @@ Page({
         this.setData({
             gender: e.currentTarget.dataset.gender || 'male',
         })
-        console.log(!this.data.flag)
-    },
-    getRankBook: function(e){
-        // console.log(e.currentTarget.dataset.id);
+        wx.showLoading({
+            title: '加载中',
+        })
         wx.request({
-          url: 'http://novel.kele8.cn/rank/'+e.currentTarget.dataset.id,
-          success: (res) => {
-              console.log(res);
-          },
-          fail: (res) => {},
-          complete: (res) => {},
+            url: 'http://novel.kele8.cn/rank/'+e.currentTarget.dataset.id,
+            success: (result) => {
+                //   console.log(result);
+                this.setData({
+                    booklist: result.data.ranking.books
+                })
+            },
+            complete: () => {
+                wx.hideLoading()
+            }
+        })
+    },
+    getRankBook: function (e) {
+        console.log(e);
+        wx.showLoading({
+            title: '加载中',
+        })
+        // console.log(e.currentTarget.dataset.id);
+        // this.setData({
+        //     booklist:null
+        // })
+        wx.request({
+            url: 'http://novel.kele8.cn/rank/' + e.currentTarget.dataset.id,
+            success: (res) => {
+                // console.log(res);
+                this.setData({
+                    booklist: res.data.ranking.books
+                })
+            },
+            complete: () => {
+                wx.hideLoading()
+            }
+        })
+    },
+    navToDetail:function(e){
+        console.log(e);
+        wx.navigateTo({
+          url: '/pages/detail/detail?id='+e.currentTarget.dataset.id,
         })
     },
     /**
@@ -36,21 +67,21 @@ Page({
         wx.request({
             url: 'https://novel.kele8.cn/rank-category',
             success: (result) => {
-                console.log(result.data);
+                // console.log(result.data);
                 this.setData({
                     rankcate: result.data
                 })
-                wx.request({
-                  url: 'http://novel.kele8.cn/rank/54d42d92321052167dfb75e3',
-                  success: (result) => {
-                      console.log(result);
-                      this.setData({
-                          booklist:result.data.ranking.books
-                      })
-                  },
-                })
             },
         });
+        wx.request({
+            url: 'http://novel.kele8.cn/rank/54d42d92321052167dfb75e3',
+            success: (result) => {
+                //   console.log(result.data.ranking.books);
+                this.setData({
+                    booklist: result.data.ranking.books
+                })
+            },
+        })
     },
 
     /**
