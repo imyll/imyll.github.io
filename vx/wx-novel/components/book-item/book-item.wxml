@@ -6,7 +6,7 @@
     <van-image class="thumb" width="150rpx" height="200rpx" lazy-load src="{{tools.parseImageUrl(book.cover)}}" />
     <view class="right">
         <view class="book-title">{{book.title}}</view>
-        <view class="desc">{{book.shortIntro}}</view>
+        <view class="desc">{{book.shortIntro}}{{book.longIntro}}</view>
         <view class="info">
             <view class="box">
                 <text class="cate">{{book.minorCate}} | </text>

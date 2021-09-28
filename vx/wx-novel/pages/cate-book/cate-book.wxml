@@ -10,4 +10,4 @@
 </view>
 <!-- <view wx:for="{{cateBooks}}" wx:key="index">{{item.title}}</view>/ -->
 <book-item wx:for="{{cateBooks}}" wx:key="index" book="{{item}}"></book-item>
-<view wx:if="{{hasMore}}">======正在努力进书中======</view>
+<view class="nobook" wx:if="{{hasMore}}">======正在努力进书中======</view>

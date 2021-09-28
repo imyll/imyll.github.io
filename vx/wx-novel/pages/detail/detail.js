@@ -15,7 +15,7 @@ Page({
     isExit: false,
     reviews: null,
     latelyFollower: Number,
-    recommendbooks:null
+    recommendbooks: null
   },
 
   navToChapter: function (event) {
@@ -25,7 +25,7 @@ Page({
   },
   //  跳转至阅读页面
   navToRead: function (event) {
-    console.log(event);
+    // console.log(event);
     wx.navigateTo({
       url: '/pages/read/read?order=' + event.currentTarget.dataset.order,
     })
@@ -42,9 +42,19 @@ Page({
 
   },
   // 移出书架
-  removeShelf: function (event) {
-  
+  removeShelf: function () {
+    // console.log(this.data.id);
+    var old = wx.getStorageSync('shelf') || [];
+    // console.log(old);
+    var newShelf = old.filter(item => item._id !== this.data.id)
+    this.setData({
+      books: newShelf,
+      isExit: false
+    })
+    wx.setStorageSync('shelf', newShelf)
   },
+
+  
   getIsExit: function (id) {
     var old = wx.getStorageSync('shelf') || [];
     var isExit = old.find(item => item._id === id);
@@ -55,8 +65,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log(options.id);
     this.setData({
       id: options.id
+    })
+    wx.showLoading({
+      title: '加载中',
     })
     //   console.log(options);
     request({
@@ -93,13 +107,16 @@ Page({
       })
     });
     wx.request({
-      url: 'http://novel.kele8.cn/recommend/'+options.id,
+      url: 'http://novel.kele8.cn/recommend/' + options.id,
       success: (res) => {
-        console.log(res);
+        // console.log(res);
         this.setData({
-          recommendbooks:res.data.books
+          recommendbooks: res.data.books
         })
       },
+      complete: () => {
+        wx.hideLoading()
+      }
     })
 
     var isExit = this.getIsExit(options.id)

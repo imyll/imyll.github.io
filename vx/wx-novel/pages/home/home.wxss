@@ -1,7 +1,7 @@
 page .van-nav-bar {
   background: #b83320;
 }
-page .van-nav-bar text {
+page .van-nav-bar .sex {
   font-size: 14px;
   color: #fff;
   border: 1px solid #fff;
@@ -9,15 +9,17 @@ page .van-nav-bar text {
   display: inline-block;
   padding: 0 5px;
 }
-page .van-nav-bar text:first-child {
+page .van-nav-bar .sex:first-child {
   padding: 0 5px 0 8px;
   border-radius: 12px 0 0 12px;
-  background: #fff;
-  color: #b83320;
 }
-page .van-nav-bar text:last-child {
+page .van-nav-bar .sex:last-child {
   padding: 0 8px 0 5px;
   border-radius: 0 12px 12px 0;
+}
+page .van-nav-bar .active {
+  background: #fff;
+  color: #b83320;
 }
 .search {
   position: relative;

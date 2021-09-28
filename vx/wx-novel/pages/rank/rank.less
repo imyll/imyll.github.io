@@ -33,7 +33,19 @@
                 align-items: center;
                 justify-content: center;
                 border-bottom: 1px solid #f0f0f0;
-
+            }
+            .active{
+                background: #f9f9fb;
+                position: relative;
+                &::after{
+                    content: '';
+                    width: 1.5px;
+                    height: 20px;
+                    background: #ee4745;
+                    position: absolute;
+                    left: -8px;
+                    display: inline-block;
+                }
             }
         }
     }

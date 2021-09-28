@@ -9,17 +9,28 @@ Page({
         rankcate: null,
         list: null,
         booklist: null,
+        bookId:null
     },
     changeGender: function (e) {
         // console.log(e);
-        this.setData({
-            gender: e.currentTarget.dataset.gender || 'male',
-        })
         wx.showLoading({
             title: '加载中',
         })
+        this.setData({
+            gender: e.currentTarget.dataset.gender || 'male',
+        });
+        // console.log(this.data.gender);
+        if(this.data.gender == "female"){
+            this.setData({
+                bookId:"54d43437d47d13ff21cad58b"
+            })
+        }else if(this.data.gender == "male"){
+            this.setData({
+                bookId:"54d42d92321052167dfb75e3"
+            })
+        }
         wx.request({
-            url: 'http://novel.kele8.cn/rank/'+e.currentTarget.dataset.id,
+            url: 'http://novel.kele8.cn/rank/' + e.currentTarget.dataset.id,
             success: (result) => {
                 //   console.log(result);
                 this.setData({
@@ -32,7 +43,10 @@ Page({
         })
     },
     getRankBook: function (e) {
-        console.log(e);
+        // console.log(e.currentTarget.dataset.id);
+        this.setData({
+            bookId:e.currentTarget.dataset.id
+        })
         wx.showLoading({
             title: '加载中',
         })
@@ -53,10 +67,10 @@ Page({
             }
         })
     },
-    navToDetail:function(e){
-        console.log(e);
+    navToDetail: function (e) {
+        // console.log(e);
         wx.navigateTo({
-          url: '/pages/detail/detail?id='+e.currentTarget.dataset.id,
+            url: '/pages/detail/detail?id=' + e.currentTarget.dataset.id,
         })
     },
     /**
@@ -64,6 +78,9 @@ Page({
      */
     onLoad: function (options) {
         // console.log(options);
+        this.setData({
+            bookId: '54d42d92321052167dfb75e3'
+        })
         wx.request({
             url: 'https://novel.kele8.cn/rank-category',
             success: (result) => {

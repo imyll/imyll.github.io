@@ -8,8 +8,8 @@
 </view>
 <view class="rank">
     <view class="left">
-        <view class="title {{}}" wx:for="{{rankcate[gender]}}" wx:key="index" bindtap="getRankBook" data-id="{{item._id}}">
-            <view class="list">{{item.shortTitle}}</view>
+        <view class="title" wx:for="{{rankcate[gender]}}" wx:key="index" bindtap="getRankBook" data-id="{{item._id}}">
+            <view class="list {{bookId == item._id ? 'active' : ''}}">{{item.shortTitle}}</view>
         </view>
     </view>
     <view class="right">

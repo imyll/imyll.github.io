@@ -34,10 +34,10 @@
                 "selectedIconPath": "/images/select-shelf.png"
             },
             {
-                "pagePath": "pages/cate/cate",
-                "text": "分类",
-                "iconPath": "/images/cate.png",
-                "selectedIconPath": "/images/select-cate.png"
+                "pagePath": "pages/rank/rank",
+                "text": "排行",
+                "iconPath": "/images/rank.png",
+                "selectedIconPath": "/images/select-rank.png"
             },
             {
                 "pagePath": "pages/home/home",
@@ -46,10 +46,10 @@
                 "selectedIconPath": "/images/select-index.png"
             },
             {
-                "pagePath": "pages/rank/rank",
-                "text": "排行",
-                "iconPath": "/images/rank.png",
-                "selectedIconPath": "/images/select-rank.png"
+                "pagePath": "pages/cate/cate",
+                "text": "分类",
+                "iconPath": "/images/cate.png",
+                "selectedIconPath": "/images/select-cate.png"
             },
             {
                 "pagePath": "pages/my/my",
