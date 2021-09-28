@@ -3,8 +3,8 @@
 
 <top-nav>排行榜</top-nav>
 <view class="nav">
-    <view data-gender="male" class="male" bindtap="changeGender" data-id="54d42d92321052167dfb75e3">男频</view>
-    <view data-gender="female" class="female" bindtap="changeGender" data-id="54d43437d47d13ff21cad58b">女频</view>
+    <view data-gender="male" class="male {{gender==='male' ? 'active':''}}" bindtap="changeGender" data-id="54d42d92321052167dfb75e3">男频</view>
+    <view data-gender="female" class="female {{gender==='female' ? 'active':''}}" bindtap="changeGender" data-id="54d43437d47d13ff21cad58b">女频</view>
 </view>
 <view class="rank">
     <view class="left">

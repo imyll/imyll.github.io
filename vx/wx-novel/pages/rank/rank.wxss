@@ -9,7 +9,8 @@
   line-height: 3;
 }
 .nav view.active {
-  color: red;
+  color: #ee4745;
+  border-bottom: 1px solid #ee4745;
 }
 .rank {
   height: 100vh;
@@ -36,6 +37,7 @@
   border-bottom: 1px solid #f0f0f0;
 }
 .rank .right {
+  margin-top: 10px;
   padding-right: 14px;
   overflow: scroll;
   height: 100%;

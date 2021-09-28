@@ -23,26 +23,39 @@
     },
     "sitemapLocation": "sitemap.json",
     "tabBar": {
+        "color": "#000",
+        "selectedColor": "#b83320",
         "list": [
-            {
-                "pagePath": "pages/home/home",
-                "text": "首页"
-            },
+            
             {
                 "pagePath": "pages/bookshelf/bookshelf",
-                "text": "书架"
+                "text": "书架",
+                "iconPath": "/images/shelf.png",
+                "selectedIconPath": "/images/select-shelf.png"
             },
             {
                 "pagePath": "pages/cate/cate",
-                "text": "分类"
+                "text": "分类",
+                "iconPath": "/images/cate.png",
+                "selectedIconPath": "/images/select-cate.png"
+            },
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "/images/index.png",
+                "selectedIconPath": "/images/select-index.png"
             },
             {
                 "pagePath": "pages/rank/rank",
-                "text": "排行"
+                "text": "排行",
+                "iconPath": "/images/rank.png",
+                "selectedIconPath": "/images/select-rank.png"
             },
             {
                 "pagePath": "pages/my/my",
-                "text": "我的"
+                "text": "我的",
+                "iconPath": "/images/my.png",
+                "selectedIconPath": "/images/select-my.png"
             }
         ]
     },
