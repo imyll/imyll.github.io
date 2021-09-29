@@ -27,7 +27,7 @@ Page({
   navToRead: function (event) {
     // console.log(event);
     wx.navigateTo({
-      url: '/pages/read/read?order=' + event.currentTarget.dataset.order,
+      url: `/pages/read/read?bookid=${this.data.id}&order=${wx.getStorageSync('readHistory')[this.data.id] || 1}`,
     })
   },
   //  加入书架
@@ -39,7 +39,6 @@ Page({
     this.setData({
       isExit: this.getIsExit(this.data.id)
     })
-
   },
   // 移出书架
   removeShelf: function () {

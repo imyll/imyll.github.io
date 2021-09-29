@@ -35,6 +35,6 @@
   width: 150rpx;
   background: #b83320;
   color: #fff;
-  line-height: 80px;
+  line-height: 106px;
   text-align: center;
 }

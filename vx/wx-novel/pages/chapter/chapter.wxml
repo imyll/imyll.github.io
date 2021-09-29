@@ -1,13 +1,15 @@
 <!--pages/chapter/chapter.wxml-->
-<nav-bar>章节列表</nav-bar>
+<nav-bar>目录</nav-bar>
+
 <view class="top">
-    <view class="count">目录共{{chapters.length}}
-        <text class="sort" bindtap="reverse">{{reversed ? '正序' : '倒序'}}</text>
-    </view>
+    <!-- <view class="count"><text class="mulu">目录</text><text class="num">共{{chapters.length}}章</text></view> -->
+    <view class="count"><text class="mulu">目录</text><text class="num">共{{countLength}}章</text></view>
+    <view class="sort" bindtap="reverse">{{reversed ? '正序' :'倒序' }}</view>
 </view>
+
 <view class="list">
-    <view wx:for="{{chapters}}" wx:key="_id" data-order="{{item.order}}" bindtap="navtoread">
-        <text>{{item.order}} </text>
-        <text>{{item.title}}</text>
+    <view class="chapter" wx:for="{{chapters}}" wx:key="_id" data-order="{{item.order}}" bindtap="navtoread">
+        <view>{{item.order}}</view>
+        <view class="content">{{item.title}}</view>
     </view>
 </view>

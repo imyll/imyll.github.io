@@ -2,6 +2,5 @@
   "usingComponents": {
     "nav-bar":"/components/nav-bar/nav-bar",
     "book-item": "/components/book-item/book-item"
-  },
-  "enablePullDownRefresh": true
+  }
 }
