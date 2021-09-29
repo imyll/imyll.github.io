@@ -55,12 +55,6 @@
                     "scene": null
                 },
                 {
-                    "name": "pages/read/read",
-                    "pathName": "pages/read/read",
-                    "query": "",
-                    "scene": null
-                },
-                {
                     "name": "pages/bookshelf/bookshelf",
                     "pathName": "pages/bookshelf/bookshelf",
                     "query": "",
@@ -88,6 +82,12 @@
                     "name": "pages/search/search",
                     "pathName": "pages/search/search",
                     "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/read/read",
+                    "pathName": "pages/read/read",
+                    "query": "id=56a8303e2aefdf397cbbf831&order=1",
                     "scene": null
                 }
             ]

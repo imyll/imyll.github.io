@@ -39,13 +39,13 @@ export default {
     },
     playing: Boolean,
   },
-  data: function() {
+  data: function () {
     return {
       personalizeds: [],
       newsongs: [],
     };
   },
-  created: function() {
+  created: function () {
     this.axios
       .get("http://apis.netstart.cn/music/personalized?limit=6")
       .then((res) => {

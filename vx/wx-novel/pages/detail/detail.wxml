@@ -54,12 +54,12 @@
 <!-- 书籍评论 -->
 <view class="comment">
     <view class="hot-comment">热门书评</view>
-    <view class="reviews" wx:for="reviews" wx:key="index">
-        <image class="avatar" src="https://statics.zhuishushenqi.com{{reviews[index].author.avatar}}" />
+    <view class="reviews" wx:for="{{reviews}}" wx:key="index">
+        <image class="avatar" src="https://statics.zhuishushenqi.com{{item.author.avatar}}" />
         <view class="right">
-            <view class="username">{{reviews[index].author.nickname}}</view>
-            <view class="reader-title">{{reviews[index].title}}</view>
-            <view class="reader-content">{{reviews[index].content}}</view>
+            <view class="username">{{item.author.nickname}}</view>
+            <view class="reader-title">{{item.title}}</view>
+            <view class="reader-content">{{item.content}}</view>
         </view>
     </view>
 </view>

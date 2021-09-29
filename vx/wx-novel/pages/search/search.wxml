@@ -4,19 +4,24 @@
 <!-- 搜索框 -->
 <view class="search">
     <van-search class="input" value="" placeholder="请输入搜索关键词" bind:change="getValue" />
-    <text class="sure" bindtap="btnclick">确定</text>
+    <text class="sure" bindtap="btnclick" data-keyword="{{inputVal}}">确定</text>
 </view>
 
 <!-- 热门推荐 -->
-<view class="searching-hotwords" wx:if="{{flag}}">
+<view class="searching-hotwords" wx:if="{{inputVal == '' ? true : false}}">
     <view class="searching-title">
         <text class="search-title">热门推荐</text>
         <text class="right" bindtap="randomSearch">换一换</text>
     </view>
-    <text class="content" wx:for="{{searchword}}" wx:key="index">{{item}}</text>
+    <text class="content" wx:for="{{searchword}}" wx:key="index" bindtap="navToBook"
+        data-keyword="{{item.word}}">{{item.word}}</text>
 </view>
 
 <!-- 推荐搜索 -->
 <view class="recommend-search" wx:else>
-    <view wx:for="{{searchBooks}}">{{item}}</view>
+    <view class="search-key">搜索“{{inputVal}}”</view>
+    <view class="recommend-key" wx:for="{{searchBooks}}" wx:key="index" bindtap="navToBook" data-keyword="{{item}}">
+        <image src="../../images/book.png" />
+        <view class="name">{{item}}</view>
+    </view>
 </view>

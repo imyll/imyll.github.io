@@ -1,18 +1,36 @@
 <!--pages/read/read.wxml-->
 <!-- <nav-bar>{{content.title}}</nav-bar> -->
-<div class="nav-bar">
+<view class="nav-bar">
     <van-nav-bar left-arrow left-text="返回" bind:click-left="onClickLeft">
         <view class="title" slot="title">{{content.title}}</view>
     </van-nav-bar>
-</div>
+</view>
 <!-- <text>pages/read/read.wxml</text> -->
-<div class="content" bindtap="changeShows">
-    <view>{{content.title}}</view>
-    <rich-text class="content-details" nodes="{{content.cpContent}}"></rich-text>
-</div>
+<view class="content" bindtap="showPopup">
+    <view class="p" wx:for="{{content.cpContent}}" wx:key="index">{{item}}</view>
+</view>
 
-<view class="bar" wx:if="{{shows}}">
-    <view>上一章</view>
-    <view>目录</view>
-    <view>下一章</view>
+<view class="bar">
+    <van-popup show="{{ show }}" round position="bottom" custom-style="height: 25%;" bind:close="onClose">
+    <view class="font-size">
+
+        <van-slider value="12" min="12" max="24" step="2" bind:change="onChange" />
+    </view>
+    <view class="bar-btn">
+        <button>上一章</button>
+        <button>目录</button>
+        <button>下一章</button>
+    </view>
+    <view class="theme">
+        <view>白天</view>
+        <view>夜间</view>
+        <view>护眼</view>
+        <view>复古</view>
+    </view>
+    </van-popup>
+</view>
+<view class="mask">
+    <view class="mask-left"></view>
+    <view class="mask-middle"></view>
+    <view class="mask-right" bindtap="next"></view>
 </view>

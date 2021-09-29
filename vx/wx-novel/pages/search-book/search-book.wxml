@@ -1,0 +1,4 @@
+<!--pages/search-book/search-book.wxml-->
+<nav-bar>搜索“{{keyword}}”</nav-bar>
+<!-- <text>pages/search-book/search-book.wxml</text> -->
+<book-item wx:for="{{books}}" wx:key="index" book="{{item}}"></book-item>

@@ -95,7 +95,7 @@ Page({
       })
     });
     request({
-      url: "https://novel.kele8.cn/book/reviews?book=" + options.id + "&limit=7"
+      url: "https://novel.kele8.cn/book/reviews?book=" + options.id + "&limit=5"
     }).then(res => {
       // console.log(res.data.reviews);
       // console.log(res.data.reviews[0].author.avatar);

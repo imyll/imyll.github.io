@@ -12,7 +12,8 @@
         "pages/search/search",
         "pages/chapter/chapter",
         "pages/read/read",
-        "pages/cate-book/cate-book"
+        "pages/cate-book/cate-book",
+        "pages/search-book/search-book"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -26,7 +27,6 @@
         "color": "#000",
         "selectedColor": "#b83320",
         "list": [
-            
             {
                 "pagePath": "pages/bookshelf/bookshelf",
                 "text": "书架",
@@ -66,6 +66,8 @@
         "van-image": "@vant/weapp/image/index",
         "van-grid": "@vant/weapp/grid/index",
         "van-grid-item": "@vant/weapp/grid-item/index",
-        "van-swipe-cell": "@vant/weapp/swipe-cell/index"
+        "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-slider": "@vant/weapp/slider/index"
     }
 }

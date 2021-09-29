@@ -1,0 +1,78 @@
+/* pages/search/search.wxss */
+/* 搜索框 */
+.search {
+    width: 100%;
+    height: 54px;
+
+    .van-search {
+        width: 85%;
+        position: absolute;
+        left: 0;
+
+        .van-search__content {
+            border-radius: 25px;
+        }
+    }
+
+    text {
+        width: 15%;
+        height: 54px;
+        line-height: 54px;
+        position: absolute;
+        right: 0;
+        color: #748389;
+    }
+}
+
+
+/* 热搜推荐 */
+.searching-hotwords {
+    padding: 10px 20px;
+
+    .searching-title {
+        margin-bottom: 20px;
+
+        .search-title {
+            font-size: 24px;
+            color: #6b6b6b;
+        }
+    }
+
+    .searching-title .right {
+        float: right;
+        color: #8a8a8f;
+        font-size: 24rpx;
+        line-height: 30px;
+    }
+
+    .content {
+        background: #efeff4;
+        color: #9b9ba3;
+        font-size: 12px;
+        margin: 0 10px 10px 0;
+        padding: 5px 10px;
+        border-radius: 25px;
+        display: inline-block;
+    }
+}
+
+// 搜索建议
+.recommend-search{
+    width: 100%;
+    padding: 14px;
+    .search-key{
+        font-size: 14px;
+    }
+    .recommend-key{
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        image{
+            width: 16px;
+            height: 16px;
+        }
+        .name{
+            margin-left: 10px;
+        }
+    }
+}
