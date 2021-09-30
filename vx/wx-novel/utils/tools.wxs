@@ -28,8 +28,17 @@ var translate = function(n){
     }
 }
 
+var changeNum = function(num){
+    if(num > 10000){
+        return num = (num / 10000).toFixed(1)
+    }else{
+        return num
+    }
+}
+
 module.exports = {
     slice: slice,
     parseImageUrl: parseImageUrl,
-    translate:translate
+    translate:translate,
+    changeNum:changeNum
 }

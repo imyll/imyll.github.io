@@ -1,27 +1,33 @@
 <!--pages/read/read.wxml-->
-<!-- <nav-bar>{{content.title}}</nav-bar> -->
-<view class="nav-bar">
-    <van-nav-bar left-arrow left-text="返回" bind:click-left="onClickLeft">
-        <view class="title" slot="title">{{content.title}}</view>
-    </van-nav-bar>
-</view>
+<nav-bar>{{content.title}}</nav-bar>
+<!-- <view class="nav-bar {{config.theme}}">
+    <view class="blank"></view>
+    <view class="read-title">{{content.title}}</view>
+</view> -->
 <!-- <text>pages/read/read.wxml</text> -->
 <view class="content {{config.theme}}" bindtap="showPopup" style="font-size: {{config.size}}px;">
     <view class="p" wx:for="{{content.cpContent}}" wx:key="index">{{item}}</view>
 </view>
 
 <view class="bar">
-    <van-popup show="{{ show }}" position="bottom" custom-style="height: 200px;" bind:close="onClose">
-    <view class="font-size">
-        <van-slider value="{{config.size}}" min="12" max="24" step="2" bind:change="onChange" />
-    </view>
-    <view class="theme">
-        <view class="{{item.text}}" wx:for="{{themes}}" wx:key="index" bindtap="changeTheme" data-theme="{{item.text}}">{{item.name}}</view>
-    </view>
-    <view class="bar-btn">
-        <button class="back" bindtap="back">上一章</button>
-        <button>目录</button>
-        <button class="next" bindtap="next">下一章</button>
-    </view>
+    <van-popup show="{{ show }}" position="bottom" custom-style="height: 200px;background: rgba(50,51,52,.9);"
+        bind:close="onClose" overlay-style="background:none;">
+        <view class="font-size">
+            <view class="size-reduce" bindtap="sizeReduce">Aa-</view>
+            <view class="progress">
+                <van-slider use-button-slot active-color="#ee4745" value="{{config.size}}" min="12" max="24" step="2"
+                    bind:change="onChange" />
+            </view>
+            <view class="size-add" bindtap="sizePlus">Aa+</view>
+        </view>
+        <view class="theme">
+            <view class="{{item.text}} {{config.theme == item.text ? 'active' : ''}}" wx:for="{{themes}}" wx:key="index"
+                bindtap="changeTheme" data-theme="{{item.text}}">{{item.name}}</view>
+        </view>
+        <view class="bar-btn">
+            <view class="back" bindtap="back">上一章</view>
+            <view class="mulu" bindtap="navToChapter" data-id="{{bookid}}">目录</view>
+            <view class="next" bindtap="next">下一章</view>
+        </view>
     </van-popup>
 </view>

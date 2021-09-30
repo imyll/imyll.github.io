@@ -25,3 +25,8 @@
         <view class="name">{{item}}</view>
     </view>
 </view>
+
+<!-- 搜索历史 -->
+<view class="search-history">
+    <view class="histitle">搜索历史</view>
+</view>

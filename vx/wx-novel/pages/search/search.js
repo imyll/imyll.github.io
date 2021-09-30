@@ -22,25 +22,30 @@ Page({
     // 获取搜索框的value值
     getValue: function (e) {
         // console.log(e.detail);
-            this.setData({
-                inputVal:e.detail
-            })
-            wx.request({
-                url: 'https://novel.kele8.cn/auto-complete?query='+this.data.inputVal,
-                success: (res) => {
-                    // console.log(res.data.keywords);
-                    this.setData({
-                        searchBooks:res.data.keywords
-                    })
-                    
-                },
-            })
+        this.setData({
+            inputVal:e.detail
+        })
+        wx.request({
+            url: 'https://novel.kele8.cn/auto-complete?query='+this.data.inputVal,
+            success: (res) => {
+                // console.log(res.data.keywords);
+                this.setData({
+                    searchBooks:res.data.keywords
+                })
+                
+            },
+        })
     },
     btnclick:function(e){
         // console.log(e.currentTarget.dataset.keyword);
-        wx.navigateTo({
-          url: '/pages/search-book/search-book?keyword='+e.currentTarget.dataset.keyword,
-        })
+        var oldhistory = wx.getStorageSync('history') || []
+        // console.log(oldhistory);
+        wx.setStorageSync('history', [...oldhistory,e.currentTarget.dataset.keyword])
+        if(e.currentTarget.dataset.keyword.trim()){
+            wx.navigateTo({
+              url: '/pages/search-book/search-book?keyword='+e.currentTarget.dataset.keyword,
+            })
+        }
     },
     navToBook:function(e){
         // console.log(e.currentTarget.dataset.keyword);
@@ -60,16 +65,7 @@ Page({
               this.setData({
                   searchword:res.data.newHotWords
             })
-            
           },
-        })
-        wx.request({
-          url: 'https://novel.kele8.cn/auto-complete?query='+this.data.inputVal,
-          success: (result) => {
-            //   console.log(result);
-          },
-          fail: (res) => {},
-          complete: (res) => {},
         })
     },
 

@@ -26,7 +26,7 @@ Page({
         request({
             url: "http://novel.kele8.cn/categories"
         }).then(res => {
-            console.log(res);
+            // console.log(res);
             this.setData({
                 cates: res.data
             })

@@ -22,7 +22,7 @@
 <view class="btn">
     <button class="add" wx:if="{{!isExit}}" bindtap="addShelf">加入书架</button>
     <button class="remove" wx:else bindtap="removeShelf">撤出书架</button>
-    <button class="read" bindtap="navToRead" data-order="1">开始阅读</button>
+    <button class="read" bindtap="navToRead" data-id="{{id}}">开始阅读</button>
 </view>
 
 <!-- 阅读数据部分 -->

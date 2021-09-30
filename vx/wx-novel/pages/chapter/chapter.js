@@ -25,6 +25,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        // console.log(options.id);
         wx.showLoading({
             title: '加载中',
         })
@@ -39,7 +40,7 @@ Page({
                 wx.request({
                     url: 'https://novel.kele8.cn/book-chapters/' + sourceId,
                     success: (res2) => {
-                        console.log(res2, this);
+                        // console.log(res2, this);
                         // this.setData({
                         //   chapters: res2.data.chapters.slice(0, 100)
                         // })

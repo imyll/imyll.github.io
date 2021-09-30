@@ -14,7 +14,7 @@
     </view>
 
     <!-- 搜索框 -->
-    <view class="search">
+    <view class="search" bindtap="navToSearch">
         <input class="weui-input" auto-focus/>
         <view class="sousuo">搜索</view>
     </view>

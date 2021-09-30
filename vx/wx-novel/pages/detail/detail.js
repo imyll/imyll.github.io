@@ -84,9 +84,6 @@ Page({
       if (value > 10000) {
         value = (value / 10000).toFixed(1)
       }
-      // console.log(value);
-      // console.log(num);
-      // console.log(res.data.latelyFollower);
       this.setData({
         detail: res.data,
         count: num,
@@ -96,11 +93,6 @@ Page({
     request({
       url: "https://novel.kele8.cn/book/reviews?book=" + options.id + "&limit=5"
     }).then(res => {
-      // console.log(res.data.reviews);
-      // console.log(res.data.reviews[0].author.avatar);
-      // for(var i = 0; i < 7; i++){
-      //   console.log(res.data.reviews[i].author.avatar);
-      // }
       this.setData({
         reviews: res.data.reviews,
       })
