@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+
+
+        class Count extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+                    x: 0,
+                }
+                this.clickHandler = this.clickHandler.bind(this)
+            }
+            clickHandler(){
+                console.log(this.state);
+                this.setState((state,props) => {
+                    return {
+                        x: state.x+1
+                    }
+                }
+                )
+            }
+            render(){
+                return <div onClick={this.clickHandler}>you clicked {this.state.x} times</div>
+            }
+        }
+        function App(){
+            return (
+                <div>
+                    <Count n={10}/>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<App/>, document.querySelector("#app"))
+    </script>
+</body>
+
+</html>

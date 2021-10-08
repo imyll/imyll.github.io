@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,25 +9,29 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
 </head>
-
 <body>
     <div id="app"></div>
     <script type="text/babel">
-        // 创建虚拟DOM
+        const myId = "title"
+        const myData = "hello world"
         var element = (
-            <div>
-                <h3>Hello</h3>
-            </div>
+            <h2 className="title">
+                <span>{myData}</span>
+            </h2>
         )
-        // 渲染虚拟DOM
-        ReactDOM.render(element, document.getElementById("app"));
-        console.log(element);
+
+
+        ReactDOM.render(element , document.querySelector("#app"))
+
         /* 
-        关于虚拟DOM 本质是 
-            object类型的对象
-            虚拟DOM最终会渲染到 页面成为真实的DOM
+            jsx语法规则
+                1、定义虚拟DOM时，不要用引号
+                2、标签中混入js表达式的时候要用{}
+                3、样式的类名指定不要用class，要用className
+                4、内联样式，要用style={{key:value}}的形式去写
+                5、只有一个根标签
+                6、标签必须闭合
         */
     </script>
 </body>
-
 </html>

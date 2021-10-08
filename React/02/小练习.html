@@ -13,21 +13,27 @@
 
 <body>
     <div id="app"></div>
+
     <script type="text/babel">
-        // 创建虚拟DOM
-        var element = (
+        function tick(){
+
+        const data = ["jQuery","React","Vue"]
+        const element = (
             <div>
-                <h3>Hello</h3>
-            </div>
-        )
-        // 渲染虚拟DOM
-        ReactDOM.render(element, document.getElementById("app"));
-        console.log(element);
-        /* 
-        关于虚拟DOM 本质是 
-            object类型的对象
-            虚拟DOM最终会渲染到 页面成为真实的DOM
-        */
+                <h1>React</h1>
+                <ul>
+                    {
+                        data.map((item,index)=>{
+                            return <li key={index}>{item}</li>
+                        })
+                    }
+                    </ul>
+                    <h2>It is {new Date().toLocaleTimeString()}</h2>
+                    </div>
+                    )
+                    ReactDOM.render(element,document.querySelector("#app"))
+    }
+    setInterval(tick,1000)
     </script>
 </body>
 

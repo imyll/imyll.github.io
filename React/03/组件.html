@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,25 +9,32 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
 </head>
-
 <body>
     <div id="app"></div>
     <script type="text/babel">
-        // 创建虚拟DOM
+
+        // 组件名称必须以大写字母开头
+        // 函数组件(无状态组件)
+        function Welcome(props){
+            return <h2>你好 {props.name}</h2>
+        }
+
+        // class 组件
+        class Helloworld extends React.Component{
+            render(props){
+                // props 必须加 this
+                return <h2>你好 {this.props.name}</h2>
+            }
+        }
         var element = (
-            <div>
-                <h3>Hello</h3>
+            <div className="content">
+                <h1>hello world</h1>
+                <Welcome name='小明'></Welcome>
+                <Helloworld name='小红'></Helloworld>
             </div>
+
         )
-        // 渲染虚拟DOM
-        ReactDOM.render(element, document.getElementById("app"));
-        console.log(element);
-        /* 
-        关于虚拟DOM 本质是 
-            object类型的对象
-            虚拟DOM最终会渲染到 页面成为真实的DOM
-        */
+        ReactDOM.render(element,document.querySelector("#app"))
     </script>
 </body>
-
 </html>

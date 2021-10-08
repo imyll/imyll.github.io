@@ -10,32 +10,19 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 </head>
 <style>
-    .box{
-        width: 200px;
-        height: 50px;
-        background: pink;
-        display: flex;
-    }
 </style>
+
 <body>
     <div id="app"></div>
-
-    <div class="box">
-        <div>123</div>
-        <div>456</div>
-    </div>
     <script>
-        var element = React.createElement(
-            "h3", {
-                className: "test"
-            },
-            "Hello world"
-        );
+        // 创建虚拟DOM
+        var element = React.createElement("h3", {
+            className: "test"
+        }, "Hello world");
+        // 渲染虚拟DOM到页面
         ReactDOM.render(element, document.querySelector("#app"))
-        console.log(element);
     </script>
-    <input type="text" oninput="value=value.replace(/[^\d]/g,'')">
-    
+
 </body>
 
 </html>
