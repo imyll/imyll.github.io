@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/react/17.0.2/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const {
+            // BrowserRouter: Router,
+            HashRouter: Router,
+            Switch,
+            Route,
+            Link,
+            useRouteMatch,
+            useParams
+        } = ReactRouterDOM;
+        
+        function Home(){
+            return <h2>Home</h2>
+        }
+        function About(){
+            return <h2>About</h2>
+        }
+        function Users(){
+            return (
+                <div className="user">
+                    <h2>users</h2>    
+                    <nav>
+                        <Link to="/users/nick">/users/nick</Link>    
+                        <Link to="/users/nick">/users/mark</Link>    
+                        <Link to="/users/nick">/users/jack</Link>    
+                    </nav>
+                    <Switch>
+                        <Route path="users/nick"></Route>    
+                    </Switch>
+                </div>
+            )
+        }
+
+        function App (props) {
+            return (
+                <Router>
+                    <div>
+                        <nav>
+                            <ul>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/about">About</Link></li>
+                                <li><Link to="/users">Users</Link></li>
+                            </ul>     
+                        </nav>    
+                    </div>
+                    
+                    
+                    <Switch>
+                        <Route path="/about">
+                            <About/>    
+                        </Route>
+                        <Route path="/users">
+                            <Users/>    
+                        </Route>
+                        <Route path="/">
+                            <Home/>    
+                        </Route>
+                    </Switch>
+                </Router>
+                
+            )
+        }
+        
+
+        ReactDOM.render(<App/>, document.querySelector("#app"))
+    </script>
+</body>
+
+</html>

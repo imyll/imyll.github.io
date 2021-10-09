@@ -5,8 +5,13 @@
     </div>
 
     <ul>
-      <li @click="$emit('change-current-song', item)" v-for="(item, index) in hotsongs" :key="item.id" class="item-list">
-        <span class="serial-num">{{index+1}}</span>
+      <li
+        @click="$emit('change-current-song', item),$emit(`change-current-play-list`,hotsong)"
+        v-for="(item, index) in hotsongs"
+        :key="item.id"
+        class="item-list"
+      >
+        <span class="serial-num">{{ index + 1 }}</span>
         <div class="left">
           <div class="song-name">{{ item.name }}</div>
           <div class="info">
@@ -15,7 +20,17 @@
             <span class="album"> - {{ item.al.name }}</span>
           </div>
         </div>
-        <div class="right"></div>
+        <div class="icon">
+          <div
+            class="play"
+            :class="{ current: currentSongId === item.id, playing: playing }"
+          >
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
       </li>
     </ul>
   </div>
@@ -23,6 +38,12 @@
 
 <script>
 export default {
+  props:{
+    currentSongId:{
+      type:Number
+    },
+    playing:Boolean
+  },
   data: function () {
     return {
       hotsongs: [],
@@ -66,7 +87,7 @@ export default {
       display: flex;
       align-items: center;
       padding: 5px 0;
-      .serial-num{
+      .serial-num {
         display: inline-block;
         width: 30px;
         font-size: 18px;
@@ -81,8 +102,8 @@ export default {
       .left {
         margin-left: 5px;
         flex: 1;
-        .info{
-          .hot-list-img{
+        .info {
+          .hot-list-img {
             display: inline-block;
             width: 15px;
             height: 15px;
@@ -93,15 +114,65 @@ export default {
           }
         }
       }
-      .right{
-        width: 30px;
-        height: 30px;
-        background-image: url("https://s3.music.126.net/mobile-new/img/index_icon_2x.png");
-        background-repeat: no-repeat;
-        background-size: 166px auto;
-        background-position: -20px 5px;
+      .icon {
+        width: 22px;
+        height: 22px;
+
+        margin-left: 15px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .play {
+          width: 100%;
+          height: 100%;
+          background-image: url("https://s3.music.126.net/mobile-new/img/index_icon_2x.png");
+          background-repeat: no-repeat;
+          background-size: 166px auto;
+          background-position: -24px 0;
+        }
+        .current {
+          width: 15px;
+          height: 15px;
+          background: red;
+          background: none;
+          display: flex;
+          justify-content: space-around;
+          i {
+            width: 2px;
+            height: 100%;
+            background: #d43c33;
+            transform-origin: bottom;
+            animation: playing 0.8s linear 0s infinite alternate;
+            animation-play-state: paused;
+            &:nth-child(1) {
+              animation-delay: -0.6s;
+            }
+            &:nth-child(2) {
+              animation-delay: -0.4s;
+            }
+            &:nth-child(3) {
+              animation-delay: -0.2s;
+            }
+          }
+          &.playing {
+            i {
+              animation-play-state: running;
+            }
+          }
+        }
       }
     }
+  }
+}
+
+@keyframes playing {
+  from {
+    transform: scaleY(0.2);
+  }
+  to {
+    transform: scaleY(1);
   }
 }
 </style>
