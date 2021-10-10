@@ -47,13 +47,13 @@ export default {
   },
   created: function () {
     this.axios
-      .get("http://apis.netstart.cn/music/personalized?limit=6")
+      .get("https://apis.netstart.cn/music/personalized?limit=6")
       .then((res) => {
         this.personalizeds = res.data.result;
       });
 
     this.axios
-      .get("http://apis.netstart.cn/music/personalized/newsong")
+      .get("https://apis.netstart.cn/music/personalized/newsong")
       .then((res) => {
         this.newsongs = res.data.result;
       });
