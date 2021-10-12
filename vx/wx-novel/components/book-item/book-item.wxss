@@ -34,7 +34,9 @@
 }
 .card .right .info .tag {
   color: #ffa54f;
-  font-size: 18rpx;
+  height: 10px;
+  line-height: 10px;
+  font-size: 9px;
   border: 1px solid #ffa54f;
   border-radius: 3px;
 }

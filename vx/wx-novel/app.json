@@ -28,6 +28,12 @@
         "selectedColor": "#b83320",
         "list": [
             {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "/images/index.png",
+                "selectedIconPath": "/images/select-index.png"
+            },
+            {
                 "pagePath": "pages/bookshelf/bookshelf",
                 "text": "书架",
                 "iconPath": "/images/shelf.png",
@@ -38,12 +44,6 @@
                 "text": "排行",
                 "iconPath": "/images/rank.png",
                 "selectedIconPath": "/images/select-rank.png"
-            },
-            {
-                "pagePath": "pages/home/home",
-                "text": "首页",
-                "iconPath": "/images/index.png",
-                "selectedIconPath": "/images/select-index.png"
             },
             {
                 "pagePath": "pages/cate/cate",
