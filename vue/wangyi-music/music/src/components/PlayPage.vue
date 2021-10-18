@@ -51,8 +51,8 @@
     <section class="lyric" v-else @click="showLyric = true" ref="lyric">
       <ul
         class="content"
-        v-if="parsedLyric.length"
         ref="lyricContent"
+        v-if="parsedLyric.length"
         :style="{ marginTop: -scrollH + 'px' }"
       >
         <li v-for="(l, i) in parsedLyric" :key="i">
@@ -70,6 +70,20 @@
           >
         </li>
       </ul>
+    </section>
+    <section class="singer">
+      <h2 @click="$emit('toggle-show-play-page', true)">
+        歌名：{{ currentSong.name }}
+      </h2>
+      <h3>
+        歌手：{{
+          currentSong.song
+            ? currentSong.song.artists[0].name
+            : currentSong.al
+            ? currentSong.ar[0].name
+            : currentSong.artists[0].anme
+        }}
+      </h3>
     </section>
     <section class="progress">
       <input
@@ -234,20 +248,21 @@ export default {
       var h = this.lisH.slice(0, index).reduce(function (total, item) {
         return total + item;
       }, 0);
-      h = h > 200 ? -200 : 0;
+      console.log(h);
+      h = h > 200 ? h - 200 : 0;
       h = h > 1928 ? 1928 : h;
-      // // console.log(h);
       this.scrollH = h;
       // var lis = this.$refs.lyricContent ? this.$refs.lyricContent.querySelectorAll("li") : null
       // console.log(index);
     },
     parsedLyric: function () {
       this.$nextTick(() => {
-        // console.log(this.$refs.lyricContent);
+        console.log(this.$refs);
 
         var lis = this.$refs.lyricContent.querySelectorAll("li");
+
         this.lisH = [...lis].map((item) => item.offsetHeight);
-        // console.log(this.lisH);
+        console.log(this.lisH);
       });
     },
   },
@@ -299,7 +314,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@keyframes gradual  {
+@keyframes gradual {
   from {
     background-position-x: 0;
   }
@@ -392,7 +407,7 @@ export default {
         // font-size: 24px;
         span {
           &.active {
-            animation-name: gradual ;
+            animation-name: gradual;
             animation-timing-function: linear;
             animation-duration: 3s;
             background-image: linear-gradient(
@@ -411,6 +426,10 @@ export default {
         }
       }
     }
+  }
+  .singer{
+    color: #fff;
+    text-align: center;
   }
   .progress {
     width: 80vw;

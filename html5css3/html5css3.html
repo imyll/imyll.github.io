@@ -52,7 +52,22 @@
             </ul>
         </div>
     </div>
-    
+    <button class="btn">发送请求</button>
+    <script>
+        var btn = document.querySelector(".btn")
+        btn.onclick = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("get",
+                "http://novel.kele8.cn/category-info?gender=male&type=hot&major=奇幻&minor=&start=0&limit=20")
+            xhr.send()
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var data = JSON.parse(xhr.responseText)
+                    console.log(data);
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

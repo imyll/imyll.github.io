@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            /* -webkit-perspective: 500; */
+            margin: 0 auto;
+            margin-top: 200px;
+            transform: rotateY(60deg);
+            transform-style: preserve-3d;
+            background: skyblue;
+        }
+
+        .box .son {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            transform: rotateX(60deg);
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="son">hello</div>
+    </div>
+
+
+
+
+
+
+    <script>
+        // 计算rmb
+        var n = 1623.1;
+
+        function rmb(n) {
+            var num100 = parseInt(n / 100);
+            var value = n % 100;
+            var num50 = parseInt(value / 50);
+            value %= 50;
+            var num20 = parseInt(value / 20);
+            value %= 20;
+            var num10 = parseInt(value / 10);
+            value %= 10;
+            var num5 = parseInt(value / 5);
+            value %= 5;
+            var num1 = parseInt(value);
+            console.log(num100, num50, num20, num10, num5, num1);
+            // document.write(
+            //     `100元的需要：${num100}张，<br/>50元的需要${num50}张,<br/>20元的需要：${num20}张，<br/>10元的需要${num10}张，<br/>5元的需要${num5}张，<br/>1元的需要${num1}张`
+            // )
+        }
+        rmb(n)
+
+        var arr = ["12", "32", "89", "12", "12", "78", "12", "32"];
+        // 去重
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    arr.splice(j, 1)
+                    j--;
+                }
+            }
+        }
+        // 排序
+        var temp
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = i + 1; j < arr.length - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j]
+                    arr[j] = arr[j + 1]
+                    arr[j + 1] = temp
+                }
+            }
+        }
+        console.log(arr);
+
+        var arr1 = [1, 1, 2, 54, 3, 48, 3, 46, 45, 45, 45, 2, 2, 3, 3]
+        var res = {}
+        var maxnum = 0;
+        var max;
+
+        function getRepeat(arr1) {
+            for (let i = 0; i < arr1.length; i++) {
+                if (!res[arr1[i]]) {
+                    res[arr1[i]] = 1
+                } else {
+                    res[arr1[i]]++
+                }
+            }
+            var keys = Object.keys(res)
+            console.log(keys);
+            for (let j = 0; j < keys.length; j++) {
+                if (res[keys[j]] > maxnum) {
+                    maxnum = res[keys[j]]
+                    max = keys[j]
+                }
+
+            }
+            return maxnum + max
+        }
+        getRepeat(arr1);
+        console.log(max, maxnum);
+
+        // 快速排序
+        var quickSort = function (arr) {
+            if (arr.length <= 1) {
+                return arr;
+            }
+            var pivotIndex = Math.floor(arr.length / 2);
+            var pivot = arr.splice(pivotIndex, 1)[0];
+            var left = [];
+            var right = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < pivot) {
+                    left.push(arr[i]);
+                } else {
+                    right.push(arr[i]);
+                }
+            }
+            return quickSort(left).concat([pivot], quickSort(right));
+        };
+        console.log(quickSort(arr));
+       
+    </script>
+</body>
+
+</html>
