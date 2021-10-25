@@ -67,5 +67,17 @@
             <li></li>
         </ul>
     </div>
+    <script>
+        console.log("1", new Date().getMilliseconds());
+        setTimeout(function () {
+            console.log("2", new Date().getMilliseconds());
+        })
+        new Promise(function (resolve) {
+            console.log("3", new Date().getMilliseconds());
+            resolve()
+        }).then(function(){
+            console.log("4", new Date().getMilliseconds());
+        })
+    </script>
 </body>
 </html>
